@@ -1,0 +1,16 @@
+alias vim='nvim'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias sync_dotfiles="~/.sync-config.sh"
+alias b='bundle'
+alias r='rails'
+alias nv='nvim'
+alias ta='tmux a'
+alias lg='lazygit'
+alias ts='tmuxinator start '
+alias tq='tmuxinator stop '
+alias pnv='cd ~/.config/nvim;nvim'
+
+# Personal Stuff
+alias con='python console.py'
+alias constg='python console.py --network polygon-test'
+alias conprd='python console.py --network polygon-main'

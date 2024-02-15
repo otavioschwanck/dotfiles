@@ -1,0 +1,10 @@
+[color]
+	ui = true
+[user]
+	name = Otávio Schwanck dos Santos
+	email = otavioschwanck@gmail.com
+; [user]
+;   name = Tortoise Hive
+;   email = tortoisehive@protonmail.com
+[push]
+	default = current
