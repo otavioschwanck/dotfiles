@@ -1,5 +1,5 @@
 # Disclaimer
-This is my personal config, but you can clone and use it as example.
+This is my personal config, but you can fork and use it as example.
 
 It uses GNU Stow to manage dotfiles (see: https://www.youtube.com/watch?v=y6XCebnB9gs)
 
