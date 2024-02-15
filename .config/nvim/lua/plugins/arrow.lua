@@ -1,6 +1,6 @@
 return {
-  -- "otavioschwanck/arrow.nvim",
-  dir = "~/Projetos/arrow.nvim/",
+  "otavioschwanck/arrow.nvim",
+  -- dir = "~/Projetos/arrow.nvim/",
   opts = {
     separate_save_and_remove = true,
     always_show_path = false,
