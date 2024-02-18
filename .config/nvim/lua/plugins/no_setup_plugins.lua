@@ -1,6 +1,18 @@
 return {
   { "otavioschwanck/new-file-template.nvim", opts = {}, event = "VeryLazy" },
   {
+    "smjonas/live-command.nvim",
+    event = "LazyFile",
+    config = function()
+      require("live-command").setup({
+        commands = {
+          Norm = { cmd = "norm!" },
+          G = { cmd = "g" },
+        },
+      })
+    end,
+  },
+  {
     "AndrewRadev/undoquit.vim",
     event = "LazyFile",
     keys = {

@@ -6,6 +6,9 @@ return {
     opts = {
       continue = true,
       modes = {
+        char = {
+          enabled = true,
+        },
         search = {
           enabled = false,
         },
