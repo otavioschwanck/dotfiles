@@ -2,7 +2,7 @@ return {
   {
     -- dir = "~/Projetos/tmux-console-runner.nvim/",
     "otavioschwanck/tmux-awesome-manager.nvim",
-    event = "VeryLazy",
+    event = "LazyFile",
     keys = {
       { "<leader>lf", "<cmd>Telescope tmux-awesome-manager list_terms<CR>", desc = "Search Commands" },
       {
