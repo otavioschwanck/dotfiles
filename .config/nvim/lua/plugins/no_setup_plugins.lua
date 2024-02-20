@@ -1,6 +1,14 @@
 return {
   { "otavioschwanck/new-file-template.nvim", opts = {}, event = "VeryLazy" },
   {
+    "toppair/reach.nvim",
+    opts = {},
+    event = "VeryLazy",
+    config = function()
+      require("otavioschwanck.utils").nv("m", "<cmd>ReachOpen marks<CR>")
+    end,
+  },
+  {
     "smjonas/live-command.nvim",
     event = "LazyFile",
     config = function()
