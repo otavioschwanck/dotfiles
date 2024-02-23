@@ -17,8 +17,8 @@ return {
         end
       end
 
-      vim.keymap.set("x", "gq", call_visual_command, opts) -- selecao
-      vim.keymap.set("v", "gQ", "<CMD>SearchReplaceWithinVisualSelectionCWord<CR>", opts)
+      vim.keymap.set("x", "gQ", call_visual_command, opts) -- selecao
+      vim.keymap.set("v", "gq", "<CMD>SearchReplaceWithinVisualSelectionCWord<CR>", opts)
 
       vim.api.nvim_set_keymap("n", "gq", "<CMD>SearchReplaceSingleBufferCWord<CR>", opts)
       vim.api.nvim_set_keymap("n", "gQ", "<CMD>SearchReplaceSingleBufferCExpr<CR>", opts)

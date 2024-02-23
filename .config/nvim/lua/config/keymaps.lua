@@ -67,8 +67,8 @@ n("<leader>rK", require("otavioschwanck.ruby").kill_ruby_instances, "Find Migrat
 n("<leader>hD", ":!rm -rf ~/.local/share/nvim/swap/*<CR>", "Delete SWP files")
 n("<leader>hr", require("otavioschwanck.lsp").restart_lsp, "Restart LSP")
 n("<leader>hf", function()
-  vim.g.disable_formatter = not vim.g.disable_formatter
-end, "Toggle Formater")
+  vim.g.disable_fieldatter = not vim.g.disable_atter
+end, "Toggle fieldater")
 
 -- w
 n("<leader>wq", "<C-w>q", "Kill Window")

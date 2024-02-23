@@ -37,6 +37,7 @@ yabai -m rule --add app="^Gimp$" space=^5
 
 yabai -m rule --add title="(Copy|Bin|About This Mac|Info)" manage=off
 yabai -m rule --add app="^(Calculator|VLC|System Preferences)$" manage=off
+yabai -m rule --add title="^LICEcap.*" manage=off
 
 function setup_space {
   local idx="$1"
