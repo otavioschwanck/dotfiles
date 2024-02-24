@@ -19,7 +19,7 @@ return {
         local number_of_lines_selected_in_visual_mode = get_selected_lines_count()
 
         if (current_mode == "V" or current_mode == "<C-V>") and number_of_lines_selected_in_visual_mode == 1 then
-          vim.cmd("SearchReplaceSingleBufferCWord")
+          vim.cmd("SearchReplaceWithinVisualSelectionCWord")
         elseif current_mode == "V" or current_mode == "<C-V>" then
           vim.cmd("SearchReplaceWithinVisualSelection")
         else
