@@ -43,7 +43,6 @@ return {
             function()
               require("telescope").extensions.egrepify.egrepify({
                 additional_args = "-j1",
-                previewer = require("telescope.config").values.file_previewer({}),
                 search_dirs = { vim.fn.fnamemodify(vim.fn.expand("%:~:h"), ":.") },
               })
             end,
@@ -67,7 +66,7 @@ return {
             "<leader>sp",
             function()
               require("telescope").extensions.egrepify.egrepify({
-                previewer = require("telescope.config").values.file_previewer({}),
+                additional_args = "-j1",
               })
             end,
             desc = "Live Grep",
