@@ -313,19 +313,6 @@ function M.prettyBuffersPicker(localOptions)
   require("telescope.builtin").buffers(options)
 end
 
-function M.grep_layout()
-  local columns = vim.o.columns
-  local lines = vim.o.lines
-
-  if columns > 280 and lines > 30 then
-    return "horizontal"
-  elseif lines > 30 then
-    return "vertical"
-  else
-    return "flex"
-  end
-end
-
 function M.live_grep_on_folder(opts)
   opts = opts or {}
   local data = {}

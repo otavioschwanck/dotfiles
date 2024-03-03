@@ -756,8 +756,8 @@ mods = "Shift|Alt"
 
 [window]
 option_as_alt = "Both"
-decorations = "None"
-opacity = 0.90
+decorations = "Buttonless"
+opacity = 0.98
 
 [window.padding]
 x = 7

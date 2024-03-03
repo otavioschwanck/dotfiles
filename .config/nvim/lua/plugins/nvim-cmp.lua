@@ -10,9 +10,9 @@ return {
       local cmp = require("cmp")
 
       -- Dont select first item:
-      -- opts.completion = {
-      --   completeopt = "menu,menuone,noinsert,noselect",
-      -- }
+      opts.completion = {
+        completeopt = "menu,menuone,noinsert,noselect",
+      }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping.select_next_item({ select = true }),

@@ -7,6 +7,8 @@ local c = utils.c
 local v = utils.v
 local nv = utils.nv
 
+n("x", '"_x')
+
 -- Command Mode Mappings
 c("<C-h>", "<Left>")
 c("<C-k>", "<S-right>")
@@ -36,12 +38,6 @@ n("<leader>fC", file_management.better_copy, "Copy")
 n("<leader>fM", file_management.better_move, "Move")
 n("<leader>fD", file_management.better_delete, "Delete")
 n("<leader>fR", file_management.better_rename, "Rename")
-n("<leader>bn", function()
-  vim.cmd("e ~/.nvim-scratch")
-end, "Open Scratch")
-n("<leader>bt", function()
-  vim.cmd("e ~/.todo")
-end, "ToDo")
 n("<leader>fy", file_management.copy_relative_path, "Copy Filename")
 n("<leader>fl", file_management.copy_relative_path_with_line, "Copy Filename With Line")
 n("<leader>fY", file_management.copy_full_path, "Copy Filename With Line")

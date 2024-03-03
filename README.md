@@ -20,6 +20,9 @@ stow --adopt . # This will generate conflicts to be solved on the dotfiles repos
 # Dependencies:
 
 Mac Packages:
+brew tap FelixKratz/formulae
+brew install borders
+
 git-delta readline openssl zlib postgresql sqlite libffi ripgrep tmux tmuxinator alacritty bash fd
 
 Ubuntu Packages:

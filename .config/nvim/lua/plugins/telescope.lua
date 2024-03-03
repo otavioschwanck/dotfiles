@@ -43,7 +43,7 @@ return {
             function()
               require("telescope").extensions.egrepify.egrepify({
                 additional_args = "-j1",
-                layout_strategy = require("otavioschwanck.telescope-utils").grep_layout(),
+                previewer = require("telescope.config").values.file_previewer({}),
                 search_dirs = { vim.fn.fnamemodify(vim.fn.expand("%:~:h"), ":.") },
               })
             end,
@@ -54,7 +54,6 @@ return {
             function()
               require("telescope").extensions.egrepify.egrepify({
                 additional_args = "-j1",
-                layout_strategy = require("otavioschwanck.telescope-utils").grep_layout(),
               })
             end,
             desc = "Live Grep",
@@ -68,8 +67,7 @@ return {
             "<leader>sp",
             function()
               require("telescope").extensions.egrepify.egrepify({
-                additional_args = "-j1",
-                layout_strategy = require("otavioschwanck.telescope-utils").grep_layout(),
+                previewer = require("telescope.config").values.file_previewer({}),
               })
             end,
             desc = "Live Grep",
