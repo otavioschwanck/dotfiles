@@ -2,6 +2,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
     opts = {
       flavour = "macchiato",
       transparent_background = true,
@@ -13,6 +14,16 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       vim.g.gruvbox_material_background = "hard"
+
+      -- create autocmd for colorscheme
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "*",
+        callback = function()
+          vim.api.nvim_set_hl(0, "NormalFloat", { link = "NormalNC" })
+          vim.api.nvim_set_hl(0, "FloatBorder", { link = "NormalNC" })
+        end,
+      })
+
       -- vim.g.gruvbox_material_transparent_background = 1
     end,
   },
