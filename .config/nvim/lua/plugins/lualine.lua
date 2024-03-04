@@ -4,6 +4,8 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
       opts.options.theme = "gruvbox-material"
+      opts.options.component_separators = ""
+      opts.options.sections_separators = ""
 
       table.insert(opts.sections.lualine_x, 1, {
         function()
@@ -16,16 +18,16 @@ return {
         color = { fg = "#e55561" },
       })
 
-      table.insert(opts.sections.lualine_c, 20, {
+      table.insert(opts.sections.lualine_c, 2, {
         function()
           return require("arrow.statusline").text_for_statusline_with_icons()
         end,
-        color = { fg = "#a6e3a1" },
+        color = { fg = "#89b482" },
       })
 
       table.insert(opts.sections.lualine_x, 2, {
         require("tmux-awesome-manager.src.integrations.status").open_terms,
-        color = { fg = "#a6e3a1" },
+        color = { fg = "#89b482" },
       })
 
       table.insert(opts.sections.lualine_c, 300, {
@@ -37,7 +39,7 @@ return {
             return " " .. alternate_filename
           end
         end,
-        color = { fg = "#f9e2af" },
+        color = { fg = "#d8a657" },
       })
     end,
   },
