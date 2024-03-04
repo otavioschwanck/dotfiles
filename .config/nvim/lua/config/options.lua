@@ -10,7 +10,7 @@ vim.opt.relativenumber = false
 -- vim-test
 vim.cmd([[
   function! TermStrategy(cmd)
-    lua require("tmux-awesome-manager").execute_command({ cmd = vim.api.nvim_eval("a:cmd"), name = "Tests...", open_as = 'window', focus_when_call = false, visit_first_call = true, orientation = 'horizontal' })
+    lua require("tmux-awesome-manager").execute_command({ cmd = vim.api.nvim_eval("a:cmd"), name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ": tests", open_as = 'window', focus_when_call = false, visit_first_call = true, orientation = 'horizontal' })
   endfunction
 ]])
 
