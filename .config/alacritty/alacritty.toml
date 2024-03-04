@@ -735,5 +735,5 @@ decorations = "Buttonless"
 opacity = 1
 
 [window.padding]
-x = 7
-y = 7
+x = 0
+y = 0
