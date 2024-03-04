@@ -4,12 +4,12 @@ return {
   opts = {
     separate_save_and_remove = true,
     always_show_path = false,
-    hide_handbook = false,
+    hide_handbook = true,
     show_icons = true,
     leader_key = ";",
     full_path_list = { "update_spec", "create_spec", "edit_spec", "destroy_spec", "delete_spec" },
     global_bookmarks = false,
-    separate_by_branch = false,
+    separate_by_branch = true,
   },
   event = "VeryLazy",
   keys = {
