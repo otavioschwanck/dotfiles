@@ -21,6 +21,9 @@ return {
         callback = function()
           vim.api.nvim_set_hl(0, "NormalFloat", { link = "NormalNC" })
           vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#89bf82" })
+          vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = "#7daea3", bg = "#282828" })
+          vim.api.nvim_set_hl(0, "DiffAdd", { fg = "#d4be98", bg = "#0f3a42" })
+          vim.api.nvim_set_hl(0, "@string.special.symbol", { fg = "#e78a4e" })
         end,
       })
 
