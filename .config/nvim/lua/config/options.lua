@@ -23,3 +23,6 @@ vim.g["netrw_banner"] = 0
 vim.opt.shortmess:append({ W = true, I = true, c = true, A = true }) -- stop asking to edit file (SWP)
 
 vim.o.inccommand = "split"
+
+-- set spell to pt_br
+vim.o.spelllang = "pt_br"

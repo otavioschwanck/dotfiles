@@ -37,7 +37,11 @@ return {
   }, -- automatically add quotes to template string
   { "tpope/vim-eunuch", event = "BufEnter" }, -- Rename, Delete, etc...
   { "michaeljsmith/vim-indent-object", event = "VeryLazy" }, -- vii and vij <3
-  { "otavioschwanck/ruby-toolkit.nvim", event = "VeryLazy" },
+  {
+    "otavioschwanck/ruby-toolkit.nvim",
+    -- dir = "~/Projetos/ruby-toolkit.nvim",
+    event = "VeryLazy",
+  },
   { "tpope/vim-rails", ft = "ruby" },
   {
     "norcalli/nvim-colorizer.lua",
