@@ -44,7 +44,7 @@ yabai -m rule --add title="^LICEcap.*" manage=off
 function setup_space {
   local idx="$1"
   local name="$2"
-  local space=
+  local space="$3"
   echo "setup space $idx : $name"
 
   space=$(yabai -m query --spaces --space "$idx")
@@ -52,12 +52,13 @@ function setup_space {
     yabai -m space --create
   fi
 
-  yabai -m space "$idx" --label "$name"
+  yabai -m space "$idx" --label "$name" --display "$space"
 }
 
-setup_space 1 browser
-setup_space 2 code
-setup_space 3 discord
-setup_space 4 other
-setup_space 5 other
-setup_space 6 other
+setup_space 1 browser 1
+setup_space 2 code 1
+setup_space 3 discord 1
+setup_space 4 other 1
+setup_space 5 other 1
+setup_space 6 other 2
+setup_space 7 other 2

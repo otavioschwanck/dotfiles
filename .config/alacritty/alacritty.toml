@@ -56,7 +56,7 @@ white = "0xd4be98"
 size = 16.0
 
 [font.normal]
-family = "MesloLGL NF"
+family = "FiraCode NF"
 
 [[keyboard.bindings]]
 chars = "\u001BOH"
