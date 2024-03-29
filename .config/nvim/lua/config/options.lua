@@ -26,3 +26,5 @@ vim.o.inccommand = "split"
 
 -- set spell to pt_br
 vim.o.spelllang = "pt_br"
+
+vim.opt.guicursor = "n-v-c:block-Cursor,i:block-CursorInsert"

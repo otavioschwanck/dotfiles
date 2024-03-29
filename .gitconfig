@@ -8,3 +8,9 @@
 ;   email = tortoisehive@protonmail.com
 [push]
 	default = current
+
+[include]
+    path = ~/themes.gitconfig
+
+[delta]
+  features=rose-pine

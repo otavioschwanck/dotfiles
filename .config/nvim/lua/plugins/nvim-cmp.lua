@@ -9,18 +9,15 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
-      -- opts.completion = {
-      --   completeopt = "menu,menuone,noinsert,noselect",
-      -- }
+      opts.completion = {
+        completeopt = "menu,menuone,noinsert,noselect",
+      }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping.select_next_item({ select = true }),
         ["<S-Tab>"] = cmp.mapping.select_prev_item({ select = true }),
-        ["<C-y>"] = cmp.mapping.confirm(),
+        ["<CR>"] = cmp.mapping.confirm(),
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping(function(_)
-          vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, true, true), "n")
-        end),
         ["<C-N>"] = cmp.mapping(function(_)
           if luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump(1)

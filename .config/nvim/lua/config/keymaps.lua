@@ -26,7 +26,7 @@ n("<C-w>,", "<C-w>W", {})
 n("<C-w>;", "<C-w>w", {})
 n("<C-e>", "<cmd>b#<CR>")
 n("ge", "<cmd>b#<CR>")
-nv("M", "m")
+-- nv("M", "m")
 
 v("J", ":m '>+1<CR>gv=gv")
 v("K", ":m '<-2<CR>gv=gv")

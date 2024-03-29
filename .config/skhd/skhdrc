@@ -61,6 +61,8 @@ ctrl + alt - l : yabai -m window east --resize left:160:0 2> /dev/null || yabai 
 shift + alt - return : open -n -a 'Alacritty.app'
 shift + alt - e : open ~/
 
+shift + alt - 9 : open ~/Downloads/dieta.pdf
+
 # Switch workspaces
 alt - 1 : yabai -m space --focus 1
 alt - 2 : yabai -m space --focus 2

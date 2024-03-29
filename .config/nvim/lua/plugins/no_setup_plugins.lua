@@ -1,5 +1,15 @@
 return {
   { "otavioschwanck/new-file-template.nvim", opts = {}, event = "VeryLazy" },
+  -- {
+  --   "xzbdmw/bookmarktest",
+  --   dependencies = {
+  --     "SmiteshP/nvim-navic",
+  --   },
+  --   lazy = false,
+  --   config = function()
+  --     require("bookmarktest").setup()
+  --   end,
+  -- },
   {
     "smjonas/live-command.nvim",
     event = "LazyFile",
@@ -11,6 +21,14 @@ return {
         },
       })
     end,
+  },
+  {
+    "cbochs/portal.nvim",
+    -- Optional dependencies
+    event = "VeryLazy",
+    dependencies = {
+      "cbochs/grapple.nvim",
+    },
   },
   {
     "AndrewRadev/undoquit.vim",
