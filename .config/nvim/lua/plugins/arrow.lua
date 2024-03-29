@@ -2,11 +2,6 @@ return {
   -- "otavioschwanck/arrow.nvim",
   {
     dir = "~/Projetos/arrow.nvim/",
-    dependencies = {
-      "cbochs/portal.nvim",
-      opts = {},
-      event = "VeryLazy",
-    },
     opts = {
       separate_save_and_remove = true,
       always_show_path = false,
