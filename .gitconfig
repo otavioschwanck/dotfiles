@@ -10,7 +10,7 @@
 	default = current
 
 [include]
-    path = ~/themes.gitconfig
+    path = ~/catppuccin.gitconfig.txt
 
 [delta]
-  features=rose-pine
+  features=catppuccin-mocha

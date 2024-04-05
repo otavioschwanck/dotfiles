@@ -356,7 +356,6 @@ function M.live_grep_on_folder(opts)
 
           require("telescope").extensions.egrepify.egrepify({
             search_dirs = dirs,
-            layout_strategy = require("otavioschwanck.telescope-utils").grep_layout(),
           })
         end)
         return true
