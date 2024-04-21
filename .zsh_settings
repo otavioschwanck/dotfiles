@@ -13,5 +13,3 @@ else
     export VISUAL="nvim"
     export EDITOR="nvim"
 fi
-
-EDITOR='nvim' # While lazygit is not fully ready.

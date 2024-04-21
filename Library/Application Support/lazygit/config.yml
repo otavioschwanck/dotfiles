@@ -1,7 +1,7 @@
 os:
-  editPreset: 'nvim-remote'
-  edit: "nvr --remote-send '<CMD>q<CR><CMD>lua local root = vim.fn.trim(vim.fn.system(\"git rev-parse --show-toplevel\")); vim.cmd(\"e \" .. root .. \"/\" .. {{filename}})<CR>'"
-  editAtLine: "nvr --remote-send '<CMD>q<CR><CMD>lua local root = vim.fn.trim(vim.fn.system(\"git rev-parse --show-toplevel\")); vim.cmd(\"e \" .. root .. \"/\" .. {{filename}})<CR>{{line}}G'"
+  editPreset: "nvim-remote"
+  edit: 'nvr --remote-send ''<CMD>q<CR><CMD>lua vim.cmd("e " .. {{filename}})<CR>'''
+  editAtLine: 'nvr --remote-send ''<CMD>q<CR><CMD>lua vim.cmd("e " .. {{filename}})<CR>{{line}}G'''
 
 gui:
   showIcons: true
@@ -12,7 +12,7 @@ gui:
 
 keybinding:
   files:
-    toggleTreeView: 't'
+    toggleTreeView: "t"
 
 git:
   paging:
@@ -20,20 +20,20 @@ git:
     pager: delta --dark --paging=never
 
 customCommands:
-  - key: '<c-P>'
+  - key: "<c-P>"
     description: "Push to a specific remote repository"
-    context: 'global'
-    loadingText: 'Pushing ...'
+    context: "global"
+    loadingText: "Pushing ..."
     prompts:
-      - type: 'menuFromCommand'
-        title: 'Which remote repository to push to?'
+      - type: "menuFromCommand"
+        title: "Which remote repository to push to?"
         command: bash -c "git remote --verbose | grep '/.* (push)'"
         filter: '(?P<remote>.*)\s+(?P<url>.*) \(push\)'
-        valueFormat: '{{ .remote }}'
-        labelFormat: '{{ .remote | bold | cyan }} {{ .url }}'
-      - type: 'menu'
-        title: 'How to push?'
+        valueFormat: "{{ .remote }}"
+        labelFormat: "{{ .remote | bold | cyan }} {{ .url }}"
+      - type: "menu"
+        title: "How to push?"
         options:
-          - value: 'push'
-          - value: 'push --force-with-lease'
-          - value: 'push --force'
+          - value: "push"
+          - value: "push --force-with-lease"
+          - value: "push --force"
