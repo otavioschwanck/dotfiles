@@ -8,7 +8,8 @@ alias ta='tmux a'
 alias lg='lazygit'
 alias ts='tmuxinator start '
 alias tq='tmuxinator stop '
-alias pnv='cd ~/dotfiles/;nvim'
+alias pnv='cd ~/dotfiles/.config/nvim;nvim'
+alias stow_config='cd ~/dotfiles;stow --adopt .'
 
 # Personal Stuff
 alias con='python console.py'
