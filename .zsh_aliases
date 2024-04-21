@@ -12,5 +12,5 @@ alias pnv='cd ~/dotfiles/;nvim'
 
 # Personal Stuff
 alias con='python console.py'
-alias constg='python console.py --network polygon-test'
+alias constg='python console.py --network polygon-amoy'
 alias conprd='python console.py --network polygon-main'

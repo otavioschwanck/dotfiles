@@ -55,6 +55,7 @@ n("<leader>rs", ff("app/services", "Find Services"), "Find Factories")
 n("<leader>rS", ff("app/business", "Find Business"), "Find Services")
 n("<leader>rn", ff("db/migrate", "Find Migration"), "Find Business")
 n("<leader>ro", ff("app/avo/resources/", "Find Avo Resource"), "Find Migration")
+n("<leader>rj", ff("app/jobs", "Find Jobs"), "Find Migration")
 
 n("<leader>rI", require("otavioschwanck.ruby").reset_rails_db, "Find Migration")
 n("<leader>rK", require("otavioschwanck.ruby").kill_ruby_instances, "Find Migration")
@@ -62,9 +63,6 @@ n("<leader>rK", require("otavioschwanck.ruby").kill_ruby_instances, "Find Migrat
 -- h
 n("<leader>hD", ":!rm -rf ~/.local/share/nvim/swap/*<CR>", "Delete SWP files")
 n("<leader>hr", require("otavioschwanck.lsp").restart_lsp, "Restart LSP")
-n("<leader>hf", function()
-  vim.g.disable_formatter = not vim.g.disable_formatter
-end, "Toggle formatter")
 
 -- w
 n("<leader>wq", "<C-w>q", "Kill Window")

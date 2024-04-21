@@ -1,34 +1,47 @@
----@diagnostic disable: missing-fields
 return {
-  "neovim/nvim-lspconfig",
-  ---@class PluginLspOpts
-  opts = {
-    ---@type lspconfig.options
-    ---@diagnostic disable-next-line: missing-fields
-    servers = {
-      tsserver = {
-        mason = false, -- i prefer to install outside
-      },
-      -- rubocop = {
-      --   mason = false,
-      --   cmd = { "bundle", "exec", "rubocop", "--lsp" },
-      -- },
-      solargraph = {
-        mason = false,
-        settings = {
-          solargraph = {
-            formatting = false, -- using at formatter.lua
-            useBundler = true,
-            diagnostics = true,
+  {
+    dependencies = {
+      "mihyaeru21/nvim-ruby-lsp",
+      opts = {},
+    },
+    init = function()
+      require("lazyvim.util").lsp.on_attach(function(client)
+        if client.name == "rubocop" then
+          client.server_capabilities.documentFormattingProvider = true
+        elseif client.name == "solargraph" then
+          client.server_capabilities.documentFormattingProvider = false
+        end
+      end)
+    end,
+    "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      ---@diagnostic disable-next-line: missing-fields
+      servers = {
+        tsserver = {
+          mason = false,
+        },
+        rubocop = {
+          mason = false,
+          cmd = { "bundle", "exec", "rubocop", "--lsp" },
+        },
+        solargraph = {
+          mason = false,
+          settings = {
+            solargraph = {
+              formatting = false,
+              useBundler = true,
+              diagnostics = false,
+            },
           },
         },
-      },
-      -- ruby_ls = {},
-      solidity = {
-        settings = {
-          solidity = {
-            includePath = "",
-            remapping = { ["@OpenZeppelin/"] = "dependencies/OpenZeppelin/openzeppelin-contracts@4.6.0/" },
+        solidity = {
+          settings = {
+            solidity = {
+              includePath = "",
+              remapping = { ["@OpenZeppelin/"] = "dependencies/OpenZeppelin/openzeppelin-contracts@4.6.0/" },
+            },
           },
         },
       },

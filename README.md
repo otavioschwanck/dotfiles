@@ -17,16 +17,21 @@ stow .
 # if you already has some of the dotfiles, you can use instead of stow . :
 stow --adopt . # This will generate conflicts to be solved on the dotfiles repository, make sure to fix them.
 ```
-# Dependencies:
+
 
 Mac Packages:
 brew tap FelixKratz/formulae
 brew install borders
 
-git-delta readline openssl zlib postgresql sqlite libffi ripgrep tmux tmuxinator alacritty bash fd
+git-delta readline openssl zlib postgresql sqlite libffi ripgrep tmux tmuxinator alacritty bash fd bat
 
 Ubuntu Packages:
 sqlite3 libsqlite3-dev xclip python3-pip tmux build-essentials
+
+To use bat theme on lazygit:
+
+After the stow: bat cache --build
+# Dependencies:
 
 (try to install delta too)
 
