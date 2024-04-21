@@ -1,8 +1,10 @@
 [color]
 	ui = true
+
 [user]
 	name = Otávio Schwanck dos Santos
 	email = otavioschwanck@gmail.com
+
 [push]
 	default = current
 

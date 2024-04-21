@@ -4,6 +4,9 @@ require("config.au_langs.base").create_au_for_lang("ruby", function(buf)
   local n = utils.n_buf
   local v = utils.v_buf
 
+  -- Leader root to be quick
+  n("<leader>=", ":w | :silent !bundle exec rubocop -A %<CR>:e %<CR>", buf.buf)
+
   n("<leader>mc", require("otavioschwanck.ruby").get_class_name, "Get Class Name", buf.buf)
   n("<leader>mC", require("otavioschwanck.ruby").search_class_name, "Search Class Name", buf.buf)
   n("<leader>md", require("otavioschwanck.ruby").comment_rubocop, "Comment Rubocop", buf.buf)

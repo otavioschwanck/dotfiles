@@ -19,6 +19,8 @@ stow --adopt . # This will generate conflicts to be solved on the dotfiles repos
 ```
 
 
+# Dependencies
+
 Mac Packages:
 brew tap FelixKratz/formulae
 brew install borders
@@ -27,13 +29,12 @@ git-delta readline openssl zlib postgresql sqlite libffi ripgrep tmux tmuxinator
 
 Ubuntu Packages:
 sqlite3 libsqlite3-dev xclip python3-pip tmux build-essentials
+(try to install delta too)
 
 To use bat theme on lazygit:
 
 After the stow: bat cache --build
 # Dependencies:
-
-(try to install delta too)
 
 NPM:
 neovim diagnostic-languageserver
