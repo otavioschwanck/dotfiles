@@ -68,9 +68,15 @@ function M.better_copy()
   end, 500)
 end
 
-function M.better_delete()
+function M.better_delete(force)
   print("Really want to delete current file? y/n ")
-  local answer = vim.fn.nr2char(vim.fn.getchar())
+  local answer
+
+  if force then
+    answer = "y"
+  else
+    answer = vim.fn.nr2char(vim.fn.getchar())
+  end
 
   if answer == "y" then
     vim.cmd("Delete!")
