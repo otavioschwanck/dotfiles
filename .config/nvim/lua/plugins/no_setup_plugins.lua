@@ -1,15 +1,5 @@
 return {
   { "otavioschwanck/new-file-template.nvim", opts = {}, event = "VeryLazy" },
-  -- {
-  --   "xzbdmw/bookmarktest",
-  --   dependencies = {
-  --     "SmiteshP/nvim-navic",
-  --   },
-  --   lazy = false,
-  --   config = function()
-  --     require("bookmarktest").setup()
-  --   end,
-  -- },
   {
     "smjonas/live-command.nvim",
     event = "LazyFile",
@@ -70,12 +60,16 @@ return {
   },
   { "AndrewRadev/splitjoin.vim", event = "VeryLazy" },
   { "AndrewRadev/switch.vim", event = "VeryLazy" },
-  -- {
-  --   "AndrewRadev/sideways.vim",
-  --   event = "VeryLazy",
-  --   keys = {
-  --     { "]a", "<cmd>SidewaysJumpRight<CR>", desc = "Sideways jump right", mode = { "v", "n" } },
-  --     { "[a", "<cmd>SidewaysJumpLeft<CR>", desc = "Sideways jump left", mode = { "v", "n" } },
-  --   },
-  -- },
+  {
+    "AndrewRadev/sideways.vim",
+    event = "VeryLazy",
+    keys = {
+      { "]a", "<cmd>SidewaysJumpRight<CR>", desc = "Sideways jump right", mode = { "v", "n" } },
+      { "[a", "<cmd>SidewaysJumpLeft<CR>", desc = "Sideways jump left", mode = { "v", "n" } },
+      { "g]a", "<cmd>SidewaysRight<CR>", desc = "Sideways right", mode = { "v", "n" } },
+      { "g[a", "<cmd>SidewaysLeft<CR>", desc = "Sideways left", mode = { "v", "n" } },
+      { "aa", "<Plug>SidewaysArgumentTextobjA<CR>", desc = "Sideways left", mode = { "o", "x" } },
+      { "ia", "<Plug>SidewaysArgumentTextobjI<CR>", desc = "Sideways left", mode = { "o", "x" } },
+    },
+  },
 }

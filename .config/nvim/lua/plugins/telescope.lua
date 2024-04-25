@@ -7,8 +7,16 @@ return {
         dependencies = { "kkharji/sqlite.lua" },
         config = function()
           require("telescope-all-recent").setup({
+            database = {
+              max_timestamps = 10,
+            },
             pickers = {
               find_files = {
+                disable = false,
+                use_cwd = true,
+                sorting = "recent",
+              },
+              git_files = {
                 disable = false,
                 use_cwd = true,
                 sorting = "recent",
