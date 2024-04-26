@@ -29,9 +29,9 @@ vim.o.spelllang = "pt_br"
 
 vim.opt.guicursor = "n-v-c:block-Cursor,i:block-CursorInsert"
 
-vim.opt.laststatus = 0
-
 vim.api.nvim_set_hl(0, "Statusline", { link = "Normal" })
 vim.api.nvim_set_hl(0, "StatuslineNC", { link = "Normal" })
 
 vim.opt.statusline = " "
+
+vim.o.winbar = "%{%v:lua.require'otavioschwanck.winbar'.eval()%}"

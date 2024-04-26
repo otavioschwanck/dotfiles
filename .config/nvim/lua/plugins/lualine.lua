@@ -15,11 +15,6 @@ return {
         color = { fg = "#89b482" },
       }
 
-      local arrow = function(props)
-        local bufnr = props.buf
-        return require("arrow.statusline").text_for_statusline_with_icons(bufnr)
-      end
-
       require("lualine").setup({
         options = {
           component_separators = { left = "", right = "" },
@@ -28,7 +23,7 @@ return {
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "filename", { arrow } },
+          lualine_b = { "filename" },
           lualine_c = { "diagnostics", "diff" },
           lualine_x = { open_terms, "branch" },
           lualine_y = { "progress" },
