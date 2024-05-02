@@ -10,6 +10,12 @@ function M.eval()
   local file_path = vim.api.nvim_eval_statusline("%f", {}).str
   local modified = vim.api.nvim_eval_statusline("%M", {}).str == "+" and "⊚" or ""
 
+  local is_a_file = vim.fn.filereadable(file_path) == 1
+
+  if not is_a_file then
+    return file_path
+  end
+
   local splitted_path = vim.split(file_path, "/")
 
   local path = ""
