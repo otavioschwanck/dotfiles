@@ -61,6 +61,13 @@ return {
   { "AndrewRadev/splitjoin.vim", event = "VeryLazy" },
   { "AndrewRadev/switch.vim", event = "VeryLazy" },
   {
+    "tpope/vim-fugitive",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>gB", "<cmd>Git blame<cr>", desc = "Git Blame" },
+    },
+  },
+  {
     "AndrewRadev/sideways.vim",
     event = "VeryLazy",
     keys = {
