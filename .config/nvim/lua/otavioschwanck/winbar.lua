@@ -10,6 +10,11 @@ function M.eval()
   local file_path = vim.api.nvim_eval_statusline("%f", {}).str
   local modified = vim.api.nvim_eval_statusline("%M", {}).str == "+" and "⊚" or ""
 
+  -- remove cwd of file_path if exists
+  if vim.fn.getcwd() ~= "" then
+    file_path = string.gsub(file_path, vim.fn.getcwd() .. "/", "")
+  end
+
   local is_a_file = vim.fn.filereadable(file_path) == 1
 
   if not is_a_file then
