@@ -14,7 +14,7 @@ return {
       global_bookmarks = false,
       separate_by_branch = true,
       per_buffer_config = {
-        lines = 4,
+        lines = 6,
         treesitter_context = { line_shift_down = 0 },
       },
     },
