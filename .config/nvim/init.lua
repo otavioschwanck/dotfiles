@@ -25,7 +25,6 @@ require("lazy").setup("plugins", {
 require("otavioschwanck.options").set()
 
 -- run this on VeryLazy
-
 vim.api.nvim_create_autocmd("User", {
   pattern = "VeryLazy",
   callback = function()

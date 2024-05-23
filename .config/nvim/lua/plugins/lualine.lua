@@ -2,8 +2,20 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    event = "VeryLazy",
+    event = "VimEnter",
+    init = function()
+      vim.g.lualine_laststatus = vim.o.laststatus
+      if vim.fn.argc(-1) > 0 then
+        -- set an empty statusline till lualine loads
+        vim.o.statusline = " "
+      else
+        -- hide the statusline on the starter page
+        vim.o.laststatus = 0
+      end
+    end,
     config = function()
+      vim.o.laststatus = vim.g.lualine_laststatus
+
       local theme = require("lualine.themes.catppuccin-mocha")
       local catppuccin_colors = require("catppuccin.palettes").get_palette()
 
@@ -17,11 +29,10 @@ return {
       }
 
       require("lualine").setup({
-        disabled_filetypes = {
-          statusline = { "dashboard" },
-          winbar = {},
-        },
         options = {
+          disabled_filetypes = {
+            statusline = { "dashboard" },
+          },
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
           theme = theme,
