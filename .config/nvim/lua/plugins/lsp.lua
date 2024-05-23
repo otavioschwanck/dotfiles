@@ -82,7 +82,7 @@ return {
           bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
 
           -- Lists all the implementations for the symbol under the cursor
-          bufmap("n", "gi", telescope.lsp_implementations)
+          bufmap("n", "gI", telescope.lsp_implementations)
 
           -- Jumps to the definition of the type symbol
           bufmap("n", "gT", telescope.lsp_type_definitions)
