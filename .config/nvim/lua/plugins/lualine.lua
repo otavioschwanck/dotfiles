@@ -1,6 +1,7 @@
 return {
   {
     "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     config = function()
       local theme = require("lualine.themes.catppuccin-mocha")
@@ -12,25 +13,30 @@ return {
 
       local open_terms = {
         require("tmux-awesome-manager.src.integrations.status").open_terms,
-        color = { fg = "#89b482" },
+        color = { fg = catppuccin_colors.green },
       }
 
       require("lualine").setup({
+        disabled_filetypes = {
+          statusline = { "dashboard" },
+          winbar = {},
+        },
         options = {
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
           theme = theme,
+          globalstatus = true,
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "filename" },
+          lualine_b = {},
           lualine_c = { "diagnostics", "diff" },
           lualine_x = { open_terms, "branch" },
           lualine_y = { "progress" },
           lualine_z = { "location" },
         },
         inactive_sections = {
-          lualine_a = { "filename", arrow },
+          lualine_a = { "filename" },
           lualine_b = {},
           lualine_c = {},
           lualine_x = {},

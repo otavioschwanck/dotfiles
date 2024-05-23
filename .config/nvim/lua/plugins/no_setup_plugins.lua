@@ -1,39 +1,21 @@
 return {
-  { "otavioschwanck/new-file-template.nvim", opts = {}, event = "VeryLazy" },
+  { "folke/neodev.nvim", opts = {}, event = "VeryLazy" },
+  { "tpope/vim-dispatch", event = "VeryLazy" },
+  { "tpope/vim-rails", event = "VeryLazy" },
+  { "echasnovski/mini.comment", event = "VeryLazy", opts = {} },
+  { "beloglazov/vim-textobj-quotes", dependencies = { "kana/vim-textobj-user" }, event = "VeryLazy" },
   {
-    "smjonas/live-command.nvim",
-    event = "LazyFile",
-    config = function()
-      require("live-command").setup({
-        commands = {
-          Norm = { cmd = "norm!" },
-          G = { cmd = "g" },
-        },
-      })
-    end,
-  },
-  {
-    "cbochs/portal.nvim",
-    -- Optional dependencies
+    "sQVe/sort.nvim",
     event = "VeryLazy",
-    dependencies = {
-      "cbochs/grapple.nvim",
-    },
+    opts = {},
   },
-  {
-    "AndrewRadev/undoquit.vim",
-    event = "LazyFile",
-    keys = {
-      { "<leader>wu", "<cmd>norm <C-w>u<CR>", desc = "Undo Window" },
-    },
-  },
+  { "otavioschwanck/new-file-template.nvim", opts = {}, event = "VeryLazy" },
   {
     "kylechui/nvim-surround",
     version = "*",
-    event = "LazyFile",
+    event = "VeryLazy",
     opts = {},
   },
-  -- { "otavioschwanck/cool-substitute.nvim", opts = { setup_keybindings = true }, event = "VeryLazy" },
   { "AndrewRadev/bufferize.vim", cmd = "Bufferize", event = "VeryLazy" },
   { "dhruvasagar/vim-table-mode", event = "VeryLazy" },
   {
@@ -42,15 +24,13 @@ return {
       require("template-string").setup({})
     end,
     event = "InsertEnter",
-  }, -- automatically add quotes to template string
+  },
   { "tpope/vim-eunuch", event = "BufEnter" }, -- Rename, Delete, etc...
   { "michaeljsmith/vim-indent-object", event = "VeryLazy" }, -- vii and vij <3
   {
     "otavioschwanck/ruby-toolkit.nvim",
-    -- dir = "~/Projetos/ruby-toolkit.nvim",
     event = "VeryLazy",
   },
-  { "tpope/vim-rails", ft = "ruby" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()

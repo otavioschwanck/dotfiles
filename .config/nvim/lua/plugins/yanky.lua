@@ -1,100 +1,56 @@
 return {
-  {
-    "gbprod/yanky.nvim",
-    dependencies = { { "kkharji/sqlite.lua", enabled = not jit.os:find("Windows") } },
-    opts = {
-      preserve_cursor_position = {
-        enabled = true,
-      },
-      highlight = { timer = 250 },
-      ring = {
-        history_length = 50,
-        storage = "shada",
-        sync_with_numbered_registers = true,
-      },
-    },
-    keys = {
-      -- stylua: ignore
-      { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History" },
+	{
+		"gbprod/yanky.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function()
+			local mapping = require("yanky.telescope.mapping")
+			local utils = require("yanky.utils")
+			local _, actions = pcall(require, "telescope.actions")
 
-      {
-        "y",
-        "<Plug>(YankyYank)",
-        mode = { "n", "x" },
-        desc = "Yank text",
-      },
-      {
-        "p",
-        "<Plug>(YankyPutAfter)",
-        mode = { "n", "x" },
-        desc = "Put yanked text after cursor",
-      },
-      {
-        "P",
-        "<Plug>(YankyPutBefore)",
-        mode = { "n", "x" },
-        desc = "Put yanked text before cursor",
-      },
-      {
-        "<C-p>",
-        "<Plug>(YankyCycleForward)",
-        desc = "Cycle forward through yank history",
-      },
-      {
-        "<C-n>",
-        "<Plug>(YankyCycleBackward)",
-        desc = "Cycle backward through yank history",
-      },
-      {
-        "]p",
-        "<Plug>(YankyPutIndentAfterLinewise)",
-        desc = "Put indented after cursor (linewise)",
-      },
-      {
-        "[p",
-        "<Plug>(YankyPutIndentBeforeLinewise)",
-        desc = "Put indented before cursor (linewise)",
-      },
-      {
-        "]P",
-        "<Plug>(YankyPutIndentAfterLinewise)",
-        desc = "Put indented after cursor (linewise)",
-      },
-      {
-        "[P",
-        "<Plug>(YankyPutIndentBeforeLinewise)",
-        desc = "Put indented before cursor (linewise)",
-      },
-      {
-        ">p",
-        "<Plug>(YankyPutIndentAfterShiftRight)",
-        desc = "Put and indent right",
-      },
-      {
-        "<p",
-        "<Plug>(YankyPutIndentAfterShiftLeft)",
-        desc = "Put and indent left",
-      },
-      {
-        ">P",
-        "<Plug>(YankyPutIndentBeforeShiftRight)",
-        desc = "Put before and indent right",
-      },
-      {
-        "<P",
-        "<Plug>(YankyPutIndentBeforeShiftLeft)",
-        desc = "Put before and indent left",
-      },
-      {
-        "=p",
-        "<Plug>(YankyPutAfterFilter)",
-        desc = "Put after applying a filter",
-      },
-      {
-        "=P",
-        "<Plug>(YankyPutBeforeFilter)",
-        desc = "Put before applying a filter",
-      },
-    },
-  },
+			require("yanky").setup({
+				ring = {
+					history_length = 50,
+					storage = "shada",
+					sync_with_numbered_registers = true,
+				},
+				preserve_cursor_position = {
+					enabled = true,
+				},
+				picker = {
+					telescope = {
+						mappings = {
+							default = mapping.put("p"),
+							i = {
+								["<C-p>"] = actions.move_selection_previous,
+								["<C-n>"] = actions.move_selection_next,
+								["<c-k>"] = mapping.put("P"),
+								["<c-x>"] = mapping.delete(),
+								["<c-r>"] = mapping.set_register("+"),
+							},
+							n = {
+								p = mapping.put("p"),
+								P = mapping.put("P"),
+								d = mapping.delete(),
+								r = mapping.set_register(utils.get_default_register()),
+							},
+						},
+					},
+				},
+			})
+
+			vim.api.nvim_set_keymap("n", "p", "<Plug>(YankyPutAfter)", {})
+			vim.api.nvim_set_keymap("n", "P", "<Plug>(YankyPutBefore)", {})
+			vim.api.nvim_set_keymap("x", "p", "<Plug>(YankyPutAfter)", {})
+			vim.api.nvim_set_keymap("x", "P", "<Plug>(YankyPutBefore)", {})
+
+			vim.api.nvim_set_keymap("n", "y", "<Plug>(YankyYank)", {})
+			vim.api.nvim_set_keymap("x", "y", "<Plug>(YankyYank)", {})
+
+			vim.api.nvim_set_keymap("n", "<c-p>", "<Plug>(YankyCycleForward)", {})
+			vim.api.nvim_set_keymap("n", "<c-n>", "<Plug>(YankyCycleBackward)", {})
+		end,
+	},
 }

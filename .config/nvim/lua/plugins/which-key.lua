@@ -5,10 +5,10 @@ return {
     opts = {
       plugins = { spelling = true },
     },
-    config = function(_, opts)
+    config = function()
       local wk = require("which-key")
 
-      opts.defaults = vim.tbl_extend("force", opts.defaults, {
+      local defaults = {
         ["<leader>cc"] = { name = "+Toggle Case" },
         ["<leader>t"] = { name = "+Test" },
         ["<leader>l"] = { name = "+Tmux" },
@@ -17,10 +17,17 @@ return {
         ["<leader>ob"] = { name = "+Brownie" },
         ["<leader>op"] = { name = "+Prod Consoles" },
         ["<leader>h"] = { name = "+Help" },
-      })
+        ["<leader>w"] = { name = "+Window" },
+        ["<leader>b"] = { name = "+Buffer" },
+        ["<leader>c"] = { name = "+Code" },
+        ["<leader>f"] = { name = "+File" },
+        ["<leader>g"] = { name = "+Git" },
+        ["<leader>q"] = { name = "+Quit/Close" },
+        ["<leader>s"] = { name = "+Search" },
+      }
 
-      wk.setup(opts)
-      wk.register(opts.defaults)
+      wk.setup({})
+      wk.register(defaults)
     end,
   },
 }

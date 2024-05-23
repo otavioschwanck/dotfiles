@@ -3,7 +3,7 @@ return {
     "stevearc/conform.nvim",
     event = "VeryLazy",
     opts = {
-      format = {
+      format_on_save = {
         timeout_ms = 5000,
         quiet = true,
         async = false,

@@ -1,1 +1,0 @@
-return require("templates.typescriptreact")

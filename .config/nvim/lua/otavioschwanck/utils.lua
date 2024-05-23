@@ -24,6 +24,10 @@ function M.nv(map, func, desc)
   vim.keymap.set({ "v", "n" }, map, func, { silent = true, noremap = true, desc = desc or "" })
 end
 
+function M.x(map, func, desc)
+  vim.keymap.set("x", map, func, { silent = true, noremap = true, desc = desc or "" })
+end
+
 function M.v_buf(map, func, desc, buf)
   vim.keymap.set("v", map, func, { silent = true, noremap = true, desc = desc or "", buffer = buf })
 end
