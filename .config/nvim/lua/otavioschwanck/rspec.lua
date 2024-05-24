@@ -20,7 +20,17 @@ function M.insert_diagnostics(lines)
       -- verify if exists a buffer with filename open
       local bufnr = vim.fn.bufnr(filename)
 
-      if filename and lineno and message then
+      local already_inserted = false
+
+      if diagnostics_by_bufnr[bufnr] then
+        for _, diagnostic in ipairs(diagnostics_by_bufnr[bufnr]) do
+          if diagnostic.real_message == message and diagnostic.lnum == lineno - 1 then
+            already_inserted = true
+          end
+        end
+      end
+
+      if filename and lineno and message and not already_inserted then
         lineno = tonumber(lineno)
         if not diagnostics_by_bufnr[bufnr] then
           diagnostics_by_bufnr[bufnr] = {}
@@ -30,13 +40,13 @@ function M.insert_diagnostics(lines)
           col = 0,
           severity = vim.diagnostic.severity.ERROR,
           source = "quickfix",
-          message = message,
+          message = message:gsub("\\n", "\n"),
+          real_message = message,
         })
       end
     end
   end
 
-  -- Adicionar os diagnósticos ao Neovim por buffer
   for bufnr, diagnostics in pairs(diagnostics_by_bufnr) do
     vim.diagnostic.set(M.quickfix_ns, bufnr, diagnostics)
   end

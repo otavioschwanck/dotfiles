@@ -62,6 +62,15 @@ return {
         cmd = { "bundle", "exec", "rubocop", "--lsp" },
       })
 
+      local border_opts = {
+        border = { { "╭" }, { "─" }, { "╮" }, { "│" }, { "╯" }, { "─" }, { "╰" }, { "│" } },
+        scrollbar = false,
+      }
+
+      vim.diagnostic.config({
+        float = border_opts,
+      })
+
       vim.api.nvim_create_autocmd("LspAttach", {
         desc = "LSP actions",
         callback = function()

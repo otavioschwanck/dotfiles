@@ -18,6 +18,13 @@ function M.set()
   n("<leader>qq", "<cmd>qall<CR>")
   n("<Esc>", ":noh<CR><esc>")
 
+  n("gw", function()
+    vim.cmd("normal! #*gn")
+    vim.cmd("normal! c")
+  end)
+
+  n("gw", "<cmd>norm! #*gnc<CR>")
+
   -- Command Mode Mappings
   c("<C-h>", "<Left>")
   c("<C-k>", "<S-right>")
