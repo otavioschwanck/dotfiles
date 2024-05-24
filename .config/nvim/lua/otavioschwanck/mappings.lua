@@ -89,6 +89,9 @@ function M.set()
   n("<leader>wl", "<C-w>l", "Move Right")
   n("<leader>wo", "<C-w>o", "Close Others")
 
+  n("[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic")
+  n("]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic")
+
   vim.cmd([[
     nnoremap <expr> 0 (col('.') - 1) == match(getline('.'),'\S') ? "<Home>" : "^"
     vnoremap <expr> 0 (col('.') - 1) == match(getline('.'),'\S') ? "<Home>" : "^"

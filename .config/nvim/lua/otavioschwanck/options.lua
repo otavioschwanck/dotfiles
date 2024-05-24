@@ -52,6 +52,14 @@ function M.set()
   -- vim-test
   vim.cmd([[
     function! TermStrategy(cmd)
+      if a:cmd =~ 'rspec'
+        if filereadable("/tmp/quickfix.out")
+          call delete("/tmp/quickfix.out")
+        endif
+
+        lua require("otavioschwanck.rspec").clear_diagnostics()
+        lua require("otavioschwanck.rspec").wait_quickfix_to_insert_diagnostics()
+      endif
       lua require("tmux-awesome-manager").execute_command({ cmd = vim.api.nvim_eval("a:cmd"), name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ": tests", open_as = 'window', focus_when_call = false, visit_first_call = true, orientation = 'horizontal' })
     endfunction
   ]])

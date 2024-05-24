@@ -56,6 +56,7 @@ return {
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
       { "<leader><tab>", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
       { "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy on Current buffer" },
+      { "<leader>x", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
       { "<leader>si", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
       { "<leader>sj", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace Symbols" },
       {
