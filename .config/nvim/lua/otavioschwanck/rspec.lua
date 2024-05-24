@@ -7,11 +7,15 @@ M.quickfix_ns = vim.api.nvim_create_namespace("quickfix")
 function M.insert_diagnostics(lines)
   local diagnostics_by_bufnr = {}
 
+  local error_count = 0
+
   -- Ler o arquivo de quickfix
   for line in lines do
     if line ~= "finished" then
       -- Extrair as partes da linha
       local filename, lineno, message = line:match("([^:]+):(%d+): (.+)")
+
+      error_count = error_count + 1
 
       -- verify if exists a buffer with filename open
       local bufnr = vim.fn.bufnr(filename)
@@ -35,6 +39,14 @@ function M.insert_diagnostics(lines)
   -- Adicionar os diagnósticos ao Neovim por buffer
   for bufnr, diagnostics in pairs(diagnostics_by_bufnr) do
     vim.diagnostic.set(M.quickfix_ns, bufnr, diagnostics)
+  end
+
+  if error_count == 0 then
+    print("All Tests Passed!")
+  elseif error_count == 1 then
+    print(error_count .. " Test Failed!")
+  else
+    print(error_count .. " Tests Failed!")
   end
 end
 

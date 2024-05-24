@@ -35,6 +35,15 @@ function M.set()
     },
   }
 
+  vim.api.nvim_create_augroup("otavioschwanck", { clear = true })
+
+  vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+    group = "otavioschwanck",
+    desc = "return cursor to where it was last time closing the file",
+    pattern = "*",
+    command = 'silent! normal! g`"zv',
+  })
+
   for i = 1, #autocommands, 1 do
     vim.api.nvim_create_autocmd(autocommands[i][1], { pattern = autocommands[i][2], callback = autocommands[i][3] })
   end
