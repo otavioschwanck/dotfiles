@@ -27,6 +27,7 @@ return {
   },
   { "tpope/vim-eunuch", event = "BufEnter" }, -- Rename, Delete, etc...
   { "michaeljsmith/vim-indent-object", event = "VeryLazy" }, -- vii and vij <3
+  { "HiPhish/rainbow-delimiters.nvim", event = "VeryLazy" },
   {
     "otavioschwanck/ruby-toolkit.nvim",
     event = "VeryLazy",

@@ -14,8 +14,8 @@ require("otavioschwanck.autocmd_langs.base").create_au_for_lang("ruby", function
   n("<leader>d", "<cmd>norm Obinding.pry<CR><cmd>wall<cr>", "Add Debugger", buf.buf)
   n("<leader>D", "<cmd>execute '%s/.*binding.pry\\n//gre'<CR><cmd>wall<cr>", "Clear Debugger", buf.buf)
 
-  n("<leader>a", require("otavioschwanck.lang_helpers.ruby").open_test_alternate, "Create Function", buf.buf)
-  n("<leader>A", require("otavioschwanck.lang_helpers.ruby").open_test_alternate_split, "Create Function", buf.buf)
+  n("<leader>a", require("otavioschwanck.lang_helpers.ruby").open_test_alternate, "Go to Test", buf.buf)
+  n("<leader>A", require("otavioschwanck.lang_helpers.ruby").open_test_alternate_split, "Go to Test (split)", buf.buf)
   n("<leader>cF", ":w | :silent !bundle exec rubocop -A %<CR>:e %<CR>", "Run Rubocop", buf.buf)
 
   v("<leader>mf", "<cmd>lua require('ruby-toolkit').extract_to_function()<CR>", "Extract Function", buf.buf)
