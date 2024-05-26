@@ -4,10 +4,27 @@ M.search_id = nil
 
 M.quickfix_ns = vim.api.nvim_create_namespace("quickfix")
 
+local function is_diagnostic_float(win_id)
+  return vim.api.nvim_win_get_config(win_id).relative ~= ""
+end
+
+-- Function to close all diagnostic float windows
+local function close_diagnostic_floats()
+  local windows = vim.api.nvim_list_wins()
+
+  for _, win_id in ipairs(windows) do
+    if is_diagnostic_float(win_id) then
+      vim.api.nvim_win_close(win_id, true)
+    end
+  end
+end
+
 function M.insert_diagnostics(lines)
   local diagnostics_by_bufnr = {}
 
   local error_count = 0
+
+  local line_of_error = {}
 
   -- Ler o arquivo de quickfix
   for line in lines do
@@ -30,11 +47,17 @@ function M.insert_diagnostics(lines)
         end
       end
 
-      if filename and lineno and message and not already_inserted then
+      if filename and lineno and message and not already_inserted and bufnr ~= -1 then
         lineno = tonumber(lineno)
+
         if not diagnostics_by_bufnr[bufnr] then
           diagnostics_by_bufnr[bufnr] = {}
         end
+
+        if vim.fn.fnamemodify(vim.fn.expand("%"), "%") == vim.fn.fnamemodify(filename, "%") then
+          table.insert(line_of_error, lineno)
+        end
+
         table.insert(diagnostics_by_bufnr[bufnr], {
           lnum = lineno - 1, -- Linhas no Neovim são indexadas a partir de 0
           col = 0,
@@ -49,6 +72,33 @@ function M.insert_diagnostics(lines)
 
   for bufnr, diagnostics in pairs(diagnostics_by_bufnr) do
     vim.diagnostic.set(M.quickfix_ns, bufnr, diagnostics)
+  end
+
+  if #line_of_error > 0 then
+    -- create a mark to go back with C-o
+    vim.cmd("normal! m'")
+
+    local cursor_line_number = vim.fn.line(".")
+
+    local closest_of_the_cursor_line_number = nil
+
+    for _, line in ipairs(line_of_error) do
+      if not closest_of_the_cursor_line_number then
+        closest_of_the_cursor_line_number = line
+      elseif math.abs(cursor_line_number - line) < math.abs(cursor_line_number - closest_of_the_cursor_line_number) then
+        closest_of_the_cursor_line_number = line
+      end
+    end
+
+    if closest_of_the_cursor_line_number ~= cursor_line_number then
+      vim.api.nvim_win_set_cursor(0, { closest_of_the_cursor_line_number, 0 })
+    end
+
+    close_diagnostic_floats()
+
+    vim.defer_fn(function()
+      vim.diagnostic.open_float()
+    end, 30)
   end
 
   if error_count == 0 then
@@ -84,7 +134,7 @@ function M.wait_quickfix_to_insert_diagnostics(retry_count, search_id)
 
   search_id = search_id or M.generate_random_search_id()
 
-  if retry_count > 500 then
+  if retry_count > 1100 then
     return
   end
 
@@ -103,7 +153,7 @@ function M.wait_quickfix_to_insert_diagnostics(retry_count, search_id)
     else
       M.wait_quickfix_to_insert_diagnostics(retry_count + 1, search_id)
     end
-  end, 1000)
+  end, 300)
 end
 
 return M
