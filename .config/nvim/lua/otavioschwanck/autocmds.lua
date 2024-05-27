@@ -28,6 +28,13 @@ function M.set()
 
   local autocommands = {
     {
+      { "BufWritePre" },
+      { "*" },
+      function()
+        vim.cmd('call mkdir(expand("<afile>:p:h"), "p")')
+      end,
+    },
+    {
       { "FileType" },
       two_space_languages,
       function()

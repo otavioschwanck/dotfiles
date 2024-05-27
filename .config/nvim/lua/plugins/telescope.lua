@@ -51,7 +51,7 @@ return {
         desc = "Live Grep",
       },
       { "<leader>,", "<cmd>Telescope buffers ignore_current_buffer=true sort_mru=true<CR>", desc = "Buffers" },
-      { "<leader>*", "<cmd>Telescope grep_string", desc = "Search String At Cursor" },
+      { "<leader>*", "<cmd>Telescope grep_string<CR>", desc = "Search String At Cursor" },
       { "<leader><cr>", "<cmd>Telescope resume<cr>", desc = "Resume Last Search" },
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
       { "<leader><tab>", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
