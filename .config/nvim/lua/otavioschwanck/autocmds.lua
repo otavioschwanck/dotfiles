@@ -18,6 +18,14 @@ function M.set()
 
   local four_space_languages = { "solidity" }
 
+  -- on window resize, run <C-w>=
+  vim.api.nvim_create_autocmd({ "VimResized" }, {
+    pattern = "*",
+    callback = function()
+      vim.cmd("wincmd =")
+    end,
+  })
+
   local autocommands = {
     {
       { "FileType" },
