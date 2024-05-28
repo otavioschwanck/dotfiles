@@ -1,6 +1,5 @@
 return {
   { "folke/neodev.nvim", opts = {}, event = "VeryLazy" },
-  { "tpope/vim-dispatch", event = "VeryLazy" },
   { "tpope/vim-rails", event = "VeryLazy" },
   { "echasnovski/mini.comment", event = "VeryLazy", opts = {} },
   { "beloglazov/vim-textobj-quotes", dependencies = { "kana/vim-textobj-user" }, event = "VeryLazy" },
