@@ -60,10 +60,9 @@ function M.set()
 
         lua require("otavioschwanck.rspec").clear_diagnostics()
         lua require("otavioschwanck.rspec").wait_quickfix_to_insert_diagnostics()
-        lua require("tmux-awesome-manager").execute_command({ cmd = vim.api.nvim_eval("a:cmd"), name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ": tests", open_as = 'pane', focus_when_call = false, size = '35%', visit_first_call = false, visit_first_call = true, orientation = 'horizontal' })
-      else
-        lua require("tmux-awesome-manager").execute_command({ cmd = vim.api.nvim_eval("a:cmd"), name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ": tests", open_as = 'window', focus_when_call = false, visit_first_call = true, orientation = 'horizontal' })
       endif
+
+      lua require("tmux-awesome-manager").execute_command({ cmd = vim.api.nvim_eval("a:cmd"), name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. ": tests", open_as = 'window', focus_when_call = false, visit_first_call = true, orientation = 'horizontal' })
     endfunction
   ]])
 
