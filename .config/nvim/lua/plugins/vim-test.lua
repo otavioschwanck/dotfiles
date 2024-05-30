@@ -25,6 +25,7 @@ return {
         desc = "Re-run faileds",
       },
       { "<leader>tv", "<cmd>TestFile<cr>", desc = "Test File" },
+      { "<leader>tb", require("otavioschwanck.rspec").go_to_backtrace, desc = "Go to Backtrace" },
       { "<leader>ta", "<cmd>TestSuite<cr>", desc = "Test Suite" },
       { "<leader>tr", "<cmd>TestLast<cr>", desc = "Test Last" },
     },
