@@ -15,6 +15,7 @@ function M.set()
   opt.grepprg = "rg --vimgrep"
   opt.ignorecase = true -- Ignore case
   opt.inccommand = "nosplit" -- preview incremental substitute
+  opt.laststatus = 3
   opt.list = true -- Show some invisible characters (tabs...
   opt.mouse = "a" -- Enable mouse mode
   opt.number = true -- Print line number

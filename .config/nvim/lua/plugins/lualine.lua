@@ -19,9 +19,9 @@ return {
       local theme = require("lualine.themes.catppuccin-mocha")
       local catppuccin_colors = require("catppuccin.palettes").get_palette()
 
-      theme.normal.c.bg = catppuccin_colors.base
-      theme.inactive.c.bg = catppuccin_colors.base
-      theme.inactive.a.bg = catppuccin_colors.base
+      theme.normal.c.bg = catppuccin_colors.surface0
+      theme.inactive.c.bg = catppuccin_colors.surface0
+      theme.inactive.a.bg = catppuccin_colors.surface0
 
       local open_terms = {
         require("tmux-awesome-manager.src.integrations.status").open_terms,
@@ -45,14 +45,6 @@ return {
           lualine_x = { open_terms, "branch" },
           lualine_y = { "progress" },
           lualine_z = { "location" },
-        },
-        inactive_sections = {
-          lualine_a = { "filename" },
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {},
         },
       })
     end,

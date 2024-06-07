@@ -98,7 +98,14 @@ return {
 
       telescope.setup({
         defaults = {
-          file_ignore_patterns = { ".*.git/.*", "node_modules/.*", "sorbet/.*", "tmp/.*", "public/.*", "vendor/.*" },
+          file_ignore_patterns = {
+            ".*.git/.*",
+            "node_modules/.*",
+            "sorbet/.*",
+            "tmp/.*",
+            "vendor/.*",
+            "storage/.*",
+          },
           layout_config = {
             prompt_position = "top",
             height = 0.8,
