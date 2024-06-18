@@ -36,11 +36,6 @@ return {
         desc = "Next Arrow",
       },
       {
-        "M",
-        "<cmd>Arrow toggle_current_line_for_buffer<CR>",
-        desc = "Save Current Line",
-      },
-      {
         "<C-j>",
         "<cmd>Arrow next_buffer_bookmark<CR>",
         desc = "Save Current Line",
