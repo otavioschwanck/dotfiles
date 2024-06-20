@@ -5,7 +5,6 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
       "nvim-treesitter/nvim-treesitter-textobjects",
-      "fdschmidt93/telescope-egrepify.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
@@ -45,7 +44,7 @@ return {
       {
         "<leader>sp",
         function()
-          require("telescope").extensions.egrepify.egrepify({
+          require("telescope.builtin").live_grep({
             additional_args = "-j1",
           })
         end,
@@ -76,7 +75,7 @@ return {
       {
         "<leader>sd",
         function()
-          require("telescope").extensions.egrepify.egrepify({
+          require("telescope.builtin").live_grep({
             additional_args = "-j1",
             search_dirs = { vim.fn.fnamemodify(vim.fn.expand("%:~:h"), ":.") },
           })
@@ -123,12 +122,6 @@ return {
         },
         pickers = {
           live_grep = {
-            layout_config = {
-              preview_cutoff = 120,
-              width = 0.9,
-            },
-          },
-          egrepify = {
             layout_config = {
               preview_cutoff = 120,
               width = 0.9,
@@ -187,7 +180,6 @@ return {
 
       telescope.load_extension("yank_history")
       telescope.load_extension("file_browser")
-      telescope.load_extension("egrepify")
       telescope.load_extension("fzf")
     end,
   },

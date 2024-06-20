@@ -54,7 +54,7 @@ function M.live_grep_on_folder(opts)
             dirs[i] = string.gsub(item, cwd, "")
           end
 
-          require("telescope").extensions.egrepify.egrepify({
+          require("telescope.builtin").live_grep({
             search_dirs = dirs,
           })
         end)
