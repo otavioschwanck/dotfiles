@@ -10,7 +10,7 @@ return {
       save_key = "git_root",
       show_icons = true,
       leader_key = ";",
-      buffer_leader_key = "m",
+      buffer_leader_key = "M",
       full_path_list = { "update_spec", "create_spec", "edit_spec", "destroy_spec", "delete_spec" },
       global_bookmarks = false,
       separate_by_branch = true,
