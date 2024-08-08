@@ -11,6 +11,7 @@ alias tq='tmuxinator stop '
 alias pnv='cd ~/dotfiles/.config/nvim;nvim'
 alias stow_config='cd ~/dotfiles;stow --adopt .'
 alias nvn='NVIM_APPNAME=new-config nvim'
+alias org="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/org;nvim"
 
 # Personal Stuff
 alias con='python console.py'

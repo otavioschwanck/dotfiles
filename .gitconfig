@@ -13,3 +13,6 @@
 
 [delta]
   features=catppuccin-mocha
+
+[core]
+	excludesFile = ~/.gitignore

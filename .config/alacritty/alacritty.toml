@@ -5,7 +5,7 @@ draw_bold_text_with_bright_colors = true
 size = 17.0
 
 [font.normal]
-family = "FiraCode NF"
+family = "FiraCode Nerd Font Mono"
 
 [font.italic]
 family = "Menlo"
