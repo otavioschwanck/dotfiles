@@ -54,10 +54,8 @@ return {
       set("<leader>rr", {
         cmd = "rails console",
         name = "rails console",
-        open_as = "pane",
+        open_as = "window",
         visit_first_call = true,
-        orientation = "horizontal",
-        size = "35%",
       })
       set("<leader>oy", { cmd = "yarn install", name = "yarn install", open_as = "pane" })
       set("<leader>oYc", { cmd = "yarn check-translations", name = "yarn check-translations", open_as = "pane" })
