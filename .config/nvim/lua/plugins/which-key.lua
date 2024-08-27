@@ -14,6 +14,7 @@ return {
         ["<leader>l"] = { name = "+Tmux" },
         ["<leader>r"] = { name = "+Rails" },
         ["<leader>o"] = { name = "+Open" },
+        ["<leader>p"] = { name = "+Copilot" },
         ["<leader>ob"] = { name = "+Brownie" },
         ["<leader>op"] = { name = "+Prod Consoles" },
         ["<leader>h"] = { name = "+Help" },
