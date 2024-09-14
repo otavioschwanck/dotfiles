@@ -7,7 +7,7 @@ return {
       "nvim-treesitter/nvim-treesitter-textobjects",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
-        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
       },
       {
         "prochri/telescope-all-recent.nvim",
@@ -50,15 +50,15 @@ return {
         end,
         desc = "Live Grep",
       },
-      { "<leader>,", "<cmd>Telescope buffers ignore_current_buffer=true sort_mru=true<CR>", desc = "Buffers" },
-      { "<leader>*", "<cmd>Telescope grep_string<CR>", desc = "Search String At Cursor" },
-      { "<leader><cr>", "<cmd>Telescope resume<cr>", desc = "Resume Last Search" },
-      { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
-      { "<leader><tab>", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
-      { "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy on Current buffer" },
-      { "<leader>x", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
-      { "<leader>si", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
-      { "<leader>sj", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace Symbols" },
+      { "<leader>,",     "<cmd>Telescope buffers ignore_current_buffer=true sort_mru=true<CR>", desc = "Buffers" },
+      { "<leader>*",     "<cmd>Telescope grep_string<CR>",                                      desc = "Search String At Cursor" },
+      { "<leader><cr>",  "<cmd>Telescope resume<cr>",                                           desc = "Resume Last Search" },
+      { "<leader>sh",    "<cmd>Telescope help_tags<cr>",                                        desc = "Help" },
+      { "<leader><tab>", "<cmd>Telescope git_status<cr>",                                       desc = "Git Status" },
+      { "<leader>ss",    "<cmd>Telescope current_buffer_fuzzy_find<cr>",                        desc = "Fuzzy on Current buffer" },
+      { "<leader>x",     "<cmd>Telescope diagnostics<cr>",                                      desc = "Diagnostics" },
+      { "<leader>si",    "<cmd>Telescope lsp_document_symbols<cr>",                             desc = "Document Symbols" },
+      { "<leader>sj",    "<cmd>Telescope lsp_workspace_symbols<cr>",                            desc = "Workspace Symbols" },
       {
         "<leader>.",
         "<cmd>Telescope file_browser path=%:p:h hidden=true respect_gitignore=false<CR>",

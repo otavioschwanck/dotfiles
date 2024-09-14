@@ -2,13 +2,10 @@
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 17.0
+size = 15.0
 
 [font.normal]
-family = "FiraCode Nerd Font Mono"
-
-[font.italic]
-family = "Menlo"
+family = "FiraMono Nerd Font"
 
 [env]
 TERM = "xterm-256color"

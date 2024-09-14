@@ -3,7 +3,7 @@ return {
     "otavioschwanck/tmux-awesome-manager.nvim",
     event = "VeryLazy",
     keys = {
-      { "<leader>lf", "<cmd>Telescope tmux-awesome-manager list_terms<CR>", desc = "Search Commands" },
+      { "<leader>lf", "<cmd>Telescope tmux-awesome-manager list_terms<CR>",      desc = "Search Commands" },
       {
         "<leader>l",
         function()
@@ -51,6 +51,13 @@ return {
         open_as = "separated_session",
         visit_first_call = false,
       })
+      set("<leader>od", {
+        cmd = "up -d postgres redis",
+        name = "Run Docker Stuff",
+        open_as = "separated_session",
+        visit_first_call = false,
+        close_on_timer = 2,
+      })
       set("<leader>rr", {
         cmd = "rails console",
         name = "rails console",
@@ -76,7 +83,8 @@ return {
       set("<leader>obp", { cmd = "python console.py --network polygon-main", name = "Brownie Console (Production)" })
 
       set("<leader>opp", {
-        cmd = "aws ssm start-session --profile amfi_prod --target $(AWS_PROFILE=amfi_prod ./codedeploy/instance-id.sh prd)",
+        cmd =
+        "aws ssm start-session --profile amfi_prod --target $(AWS_PROFILE=amfi_prod ./codedeploy/instance-id.sh prd)",
         name = "!!!API Prod!!!",
         open_as = "separated_session",
         focus_when_call = true,
