@@ -7,7 +7,8 @@ local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 
 local dotfiles = {
-  { path = "~/.config/i3/config",                              display = "i3" },
+  { path = "~/.config/bspwm/bspwmrc",                          display = "bspwm" },
+  { path = "~/.config/sxhkd/sxhkdrc",                          display = "sxhkdrc" },
   { path = "~/.config/alacritty/alacritty.toml",               display = "Alacritty" },
   { path = "~/.zshrc",                                         display = "zshrc" },
   { path = "~/.zsh_aliases",                                   display = "zshrc aliases" },

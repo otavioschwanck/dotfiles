@@ -1,75 +1,182 @@
-# Change window focus
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - h : yabai -m window --focus west
-alt - l : yabai -m window --focus east
+#
+# wm independent hotkeys
+#
 
-# change focus between external displays (left and right)
-alt - s: yabai -m display --focus west
-alt - d: yabai -m display --focus east
+# terminal emulator
+super + Return
+	kitty
 
-# rotate layout clockwise
-shift + alt - r : yabai -m space --rotate 270
+# program launcher
+super + d
+	rofi -modi drun -show drun -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
+                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
 
-# Focus alternate
-alt - a : yabai -m space --focus recent
+# show open window
+super + ctrl + d
+	rofi -modi drun -show window -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
+                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
 
-# flip along y-axis
-shift + alt - y : yabai -m space --mirror y-axis
+# show ssh sesssions
+super + shift + d
+	rofi -modi drun -show ssh -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
+                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
 
-# flip along x-axis
-shift + alt - x : yabai -m space --mirror x-axis
+# power-menu 
+super + shift + e
+     ~/.config/rofi/powermenu.sh
 
-# toggle window float
-shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
 
-# maximize a window
-alt - return : yabai -m window --toggle zoom-fullscreen
-alt - m : yabai -m window --toggle zoom-fullscreen
+#
+# bspwm hotkeys
+#
 
-# balance out tree of windows (resize to occupy same area)
-shift + alt - b : yabai -m space --balance
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
 
-# swap windows
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - h : yabai -m window --swap west
-shift + alt - l : yabai -m window --swap east
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
 
-# Move across monitors
-shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - d : yabai -m window --display east; yabai -m display --focus east;
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
 
-# move window to space #
-shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1;
-shift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2;
-shift + alt - 3 : yabai -m window --space 3; yabai -m space --focus 3;
-shift + alt - 4 : yabai -m window --space 4; yabai -m space --focus 4;
-shift + alt - 5 : yabai -m window --space 5; yabai -m space --focus 5;
-shift + alt - 6 : yabai -m window --space 6; yabai -m space --focus 6;
-shift + alt - 7 : yabai -m window --space 7; yabai -m space --focus 7;
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
 
-alt + shift - q : yabai -m window --close;
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
 
-ctrl + alt - r : yabai --restart-service; skhd --restart-service
+#
+# state/flags
+#
 
-ctrl + alt - h : yabai -m window west --resize right:-160:0 2> /dev/null || yabai -m window --resize right:-80:0
-ctrl + alt - j : yabai -m window north --resize bottom:0:160 2> /dev/null || yabai -m window --resize bottom:0:80
-ctrl + alt - k : yabai -m window south --resize top:0:-160 2> /dev/null || yabai -m window --resize top:0:-80
-ctrl + alt - l : yabai -m window east --resize left:160:0 2> /dev/null || yabai -m window --resize left:80:0
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-shift + alt - return : open -n -a 'Alacritty.app'
-shift + alt - e : open ~/
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
 
-shift + alt - 9 : open ~/Downloads/dieta.pdf
+#
+# focus/swap
+#
 
-# Switch workspaces
-alt - 1 : yabai -m space --focus 1
-alt - 2 : yabai -m space --focus 2
-alt - 3 : yabai -m space --focus 3
-alt - 4 : yabai -m space --focus 4
-alt - 5 : yabai -m space --focus 5
-alt - 6 : yabai -m space --focus 6
-alt - 7 : yabai -m space --focus 7
-alt - 8 : yabai -m space --focus 8
-alt - 9 : yabai -m space --focus 9
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+#
+# Special hotkeys
+#
+
+# Multimedia keys
+XF86AudioRaiseVolume
+  amixer -q set Master 5%+ unmute
+
+# Still multimedia
+XF86AudioLowerVolume
+  amixer -q set Master 5%- unmute
+
+# still
+XF86AudioMute
+  amixer -D pulse sset Master toggle-mute
+  
+# amixer -q set Master toggle
+# Simple amixer command seems to have problems unmuting device
+
+# Brightness up
+XF86MonBrightnessUp
+  xbacklight -inc 5
+
+# And brightness down
+XF86MonBrightnessDown
+  xbacklight -dec 5
+
+# Screenshot
+Print
+  scrot "$(xdg-user-dir PICTURES)/screenshot-$(date +%F_%T).png"
+
+super + Print
+  ~/.config/bspwm/scripts/screenshot.sh
+
+# Shortcuts
+super + w 
+  firefox
+
+super + n 
+  thunar  
+
+super + F1
+  ~/.config/bspwm/scripts/keybindings_rofi.sh
