@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-  ~/.config/polybar/blocks/scripts/launcher.sh &
+  ~/.config/polybar/forest/scripts/launcher.sh &
 
 # power-menu 
 super + shift + e
@@ -125,28 +125,28 @@ super + r
 
 # Move window
 super + shift + 1
-  bspc node -d I;bspc desktop -f I
+  bspc node -d I
 
 super + shift + 2
-  bspc node -d II;bspc desktop -f II
+  bspc node -d II
 
 super + shift + 3
-  bspc node -d III;bspc desktop -f III
+  bspc node -d III
 
 super + shift + 4
-  bspc node -d IV;bspc desktop -f IV
+  bspc node -d IV
 
 super + shift + q
-  bspc node -d V;bspc desktop -f V
+  bspc node -d V
 
 super + shift + w
-  bspc node -d VI;bspc desktop -f VI
+  bspc node -d VI
 
 super + shift + e
-  bspc node -d VII;bspc desktop -f VII
+  bspc node -d VII
 
 super + shift + r
-  bspc node -d VIII;bspc desktop -f VIII
+  bspc node -d VIII
 
 #
 # preselect
