@@ -9,6 +9,7 @@ local action_state = require("telescope.actions.state")
 local dotfiles = {
   { path = "~/.config/bspwm/bspwmrc",                          display = "bspwm" },
   { path = "~/.config/sxhkd/sxhkdrc",                          display = "sxhkdrc" },
+  { path = "~/.config/polybar/blocks/config.ini",              display = "polybar" },
   { path = "~/.config/alacritty/alacritty.toml",               display = "Alacritty" },
   { path = "~/.zshrc",                                         display = "zshrc" },
   { path = "~/.zsh_aliases",                                   display = "zshrc aliases" },
@@ -16,8 +17,6 @@ local dotfiles = {
   { path = "~/.tmux.conf",                                     display = "Tmux" },
   { path = "~/Library/Application Support/lazygit/config.yml", display = "Lazygit" },
   { path = "~/.gitconfig",                                     display = "GitConfig" },
-  { path = "~/.config/yabai/yabairc",                          display = "YabaiRc" },
-  { path = "~/.config/skhd/skhdrc",                            display = "SkhdRc" },
 }
 
 function M.call(files)
