@@ -19,6 +19,9 @@ stow --adopt . # This will generate conflicts to be solved on the dotfiles repos
 ```
 
 
+# Polybar arch packages
+- yad 
+
 # Dependencies
 
 Mac Packages:
