@@ -38,8 +38,10 @@ bspc config active_border_color         "#3c3836"
 #
 # Set display from arandr saved script
 sh ~/.screenlayout/monitor.sh &
+
 # Bar
 ~/.config/polybar/launch.sh --forest &
+
 # Notifications
 /usr/bin/dunst &
 
@@ -59,10 +61,8 @@ xsetroot -cursor_name left_ptr &
 ~/.config/bspwm/scripts/low_bat_notifier.sh
 
 # Apps autostart
-sleep 3
+sleep 2
 
 google-chrome-stable &
 bspc desktop -f 2 &
-alacritty &
-sleep 0.2
 discord &

@@ -59,7 +59,7 @@ case $chosen in
         ;;
     $lock)
 		if [[ -f /usr/bin/i3lock ]]; then
-			sleep 0.2; /home/$USER/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh
+			xflock4
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
 		fi
