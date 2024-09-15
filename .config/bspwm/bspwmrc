@@ -21,7 +21,6 @@ bspc rule -a Google-chrome desktop='^1'
 # bspc rule -a Alacritty desktop='^2'
 bspc rule -a discord desktop='^3'
 bspc rule -a postman desktop='^4'
-bspc rule -a WhatSie desktop='^5'
 bspc rule -a Gnome-calendar desktop='^4'
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Yad state=floating
@@ -60,13 +59,10 @@ xsetroot -cursor_name left_ptr &
 ~/.config/bspwm/scripts/low_bat_notifier.sh
 
 # Apps autostart
-bspc node -o 2 # Alacritty <3
-
 sleep 3
 
 google-chrome-stable &
 bspc desktop -f 2 &
 alacritty &
 sleep 0.2
-whatsie &
 discord &

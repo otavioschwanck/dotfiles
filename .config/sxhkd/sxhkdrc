@@ -38,6 +38,9 @@ super + shift + m
 super + f
 	bspc desktop -l next
 
+super + m
+	bspc desktop -l next
+
 # alternate between the tiled and monocle layout
 super + shift + f
 	bspc node -t fullscreen
@@ -77,6 +80,9 @@ super + {p,b,comma,period}
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
+
+super + a
+  bspc node -f next.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -210,4 +216,4 @@ super + shift + a
 
 # Shortcuts
 super + n 
-  thunar  
+  pcmanfm
