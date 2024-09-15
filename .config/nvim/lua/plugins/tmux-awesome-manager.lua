@@ -81,6 +81,8 @@ return {
       set("<leader>obd", { cmd = "python console.py", name = "Brownie Console (local)" })
       set("<leader>obs", { cmd = "python console.py --network polygon-test", name = "Brownie Console (Staging)" })
       set("<leader>obp", { cmd = "python console.py --network polygon-main", name = "Brownie Console (Production)" })
+      set("<leader>od",
+        { cmd = "up -d postgres redis", name = "Run Docker", open_as = "window", visit_first_call = false, close_on_timer = 2 })
 
       set("<leader>opp", {
         cmd =
