@@ -10,6 +10,12 @@ super + Return
 super + d
   ~/.config/polybar/forest/scripts/launcher.sh &
 
+super + shift + n
+  dunstctl history-pop
+
+super + shift + Escape
+  dunstctl close-all
+
 # power-menu 
 super + shift + e
   ~/.config/polybar/forest/scripts/powermenu.sh &
