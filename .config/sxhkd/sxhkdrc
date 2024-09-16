@@ -16,6 +16,9 @@ super + shift + n
 super + shift + Escape
   dunstctl close-all
 
+super + shift + Return
+  dunstctl action
+
 # power-menu 
 super + shift + e
   ~/.config/polybar/forest/scripts/powermenu.sh &
