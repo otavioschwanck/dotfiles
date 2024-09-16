@@ -20,7 +20,7 @@ super + shift + Return
   dunstctl action
 
 # power-menu 
-super + shift + e
+super + shift + x
   ~/.config/polybar/forest/scripts/powermenu.sh &
 
 # make sxhkd reload its configuration files:

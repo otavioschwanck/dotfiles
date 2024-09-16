@@ -18,6 +18,7 @@ bspc config focus_follows_pointer true
 bspc config single_monocle false
 
 bspc rule -a Google-chrome desktop='^1'
+bspc rule -a web.whatsapp.com desktop='^5'
 # bspc rule -a Alacritty desktop='^2'
 bspc rule -a discord desktop='^3'
 bspc rule -a postman desktop='^4'
