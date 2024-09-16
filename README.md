@@ -20,7 +20,13 @@ stow --adopt . # This will generate conflicts to be solved on the dotfiles repos
 
 
 # Polybar arch packages
-- yad 
+- yad
+
+pip install:
+gcalcli nextmeeting
+
+-- calendar
+https://github.com/chmouel/nextmeeting?tab=readme-ov-file
 
 # Dependencies
 
