@@ -12,6 +12,6 @@ if [ -n "$next_event" ]; then
 
     xdg-open "$event_url"
 else
-  notify-send "Sem mais reuniões para hoje"
+  notify-send "Nenhum reunião encontrada"
 fi
 

@@ -36,5 +36,5 @@ if [ -n "$next_event" ]; then
         echo "Formato de horário inválido: $event_time"
     fi
 else
-    echo "Sem reuniões hoje"
+    echo "Sem mais reuniões hoje"
 fi
