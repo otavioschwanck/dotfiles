@@ -8,7 +8,6 @@ current_time=$(date +%H:%M)
 next_event=$(gcalcli --nocolor agenda "$current_time" "23:59" --nodeclined --details=url --details=title --tsv | grep "$(date +%Y-%m-%d)" | head -n 1)
 
 if [ -n "$next_event" ]; then
-    # Formata a saída para mostrar apenas a hora, título e URL do evento
     event_time=$(echo "$next_event" | awk '{print $2}')
     event_url=$(echo "$next_event" | awk '{print $6}')
     event_title=$(echo "$next_event" | awk -F'\t' '{print $7}')
