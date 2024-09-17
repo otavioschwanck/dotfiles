@@ -46,7 +46,7 @@ textbox-prompt-colon {
 	background-color: 				@bga;
 	text-color: 					@ac;
 	expand: false;
-	str: "!";
+	str: "";
 	font:							"feather 8";
 }
 
