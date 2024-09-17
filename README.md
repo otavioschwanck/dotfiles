@@ -24,6 +24,7 @@ stow --adopt . # This will generate conflicts to be solved on the dotfiles repos
 
 pip install:
 gcalcli nextmeeting
+https://github.com/insanum/gcalcli/blob/HEAD/docs/api-auth.md
 
 -- calendar
 https://github.com/chmouel/nextmeeting?tab=readme-ov-file
@@ -57,3 +58,5 @@ pip install neovim-remote pynvim --quiet
 # SKHD and Yabai <3
 brew install koekeishiya/formulae/yabai
 brew install koekeishiya/formulae/skhd
+
+# 
