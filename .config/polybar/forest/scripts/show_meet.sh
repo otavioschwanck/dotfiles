@@ -9,7 +9,7 @@ next_event=$(gcalcli --nocolor agenda "$current_time" "23:59" --nostarted --node
 
 current_minute=$(date +%M)
 
-if [ $((current_minute % 5)) -eq 0 ]; then
+if [ $((current_minute % 3)) -eq 0 ]; then
   temp_file="/tmp/events_list.tsv"
 
   gcalcli --nocolor agenda --nodeclined --details=url --details=title --tsv > "$temp_file"
