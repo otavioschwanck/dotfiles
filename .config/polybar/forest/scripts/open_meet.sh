@@ -2,7 +2,7 @@
 
 current_time=$(date +%H:%M)
 
-next_event=$(gcalcli --nocolor agenda "$current_time" "23:59" --nodeclined --details=url --details=title --tsv | grep "$(date +%Y-%m-%d)" | head -n 1)
+next_event=$(gcalcli --nocolor agenda "$current_time" "23:59" --nostarted --nodeclined --details=url --details=title --tsv | grep "$(date +%Y-%m-%d)" | head -n 1)
 
 if [ -n "$next_event" ]; then
     event_url=$(echo "$next_event" | awk '{print $6}')
@@ -12,6 +12,6 @@ if [ -n "$next_event" ]; then
 
     xdg-open "$event_url"
 else
-  notify-send "Sem reuniões para hoje"
+  notify-send "Sem mais reuniões para hoje"
 fi
 

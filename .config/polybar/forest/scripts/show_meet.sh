@@ -5,7 +5,7 @@ MESSAGE_TIME=10
 
 current_time=$(date +%H:%M)
 
-next_event=$(gcalcli --nocolor agenda "$current_time" "23:59" --nodeclined --details=url --details=title --tsv | grep "$(date +%Y-%m-%d)" | head -n 1)
+next_event=$(gcalcli --nocolor agenda "$current_time" "23:59" --nostarted --nodeclined --details=url --details=title --tsv | grep "$(date +%Y-%m-%d)" | head -n 1)
 
 if [ -n "$next_event" ]; then
     event_time=$(echo "$next_event" | awk '{print $2}')

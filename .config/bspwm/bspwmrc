@@ -22,7 +22,6 @@ bspc config single_monocle false
 bspc rule -a Google-chrome desktop='^1'
 bspc rule -a WebApp-Discord5213 desktop='^5' # Actually is zapzap
 bspc rule -a WebApp-YoutubeMusic1094 desktop='^6'
-bspc rule -a WebApp-Calendar7623 desktop='^8'
 # bspc rule -a Alacritty desktop='^2'
 bspc rule -a discord desktop='^3'
 bspc rule -a postman desktop='^4'
@@ -68,7 +67,6 @@ sleep 4
 # Apps autostart
 dex ~/.local/share/applications/WebApp-Discord5213.desktop & # actually is zapzap
 discord &
-dex ~/.local/share/applications/WebApp-Calendar7623.desktop &
 dex ~/.local/share/applications/WebApp-YoutubeMusic1094.desktop &
 google-chrome-stable &
 bspc desktop -f 2 &
