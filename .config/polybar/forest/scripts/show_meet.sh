@@ -7,6 +7,14 @@ current_time=$(date +%H:%M)
 
 next_event=$(gcalcli --nocolor agenda "$current_time" "23:59" --nostarted --nodeclined --details=url --details=title --tsv | grep "$(date +%Y-%m-%d)" | head -n 1)
 
+current_minute=$(date +%M)
+
+if [ $((current_minute % 5)) -eq 0 ]; then
+  temp_file="/tmp/events_list.tsv"
+
+  gcalcli --nocolor agenda --nodeclined --details=url --details=title --tsv > "$temp_file"
+fi
+
 if [ -n "$next_event" ]; then
     event_time=$(echo "$next_event" | awk '{print $2}')
     event_url=$(echo "$next_event" | awk '{print $6}')

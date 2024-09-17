@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# Obtém a lista de eventos para o dia com detalhes e títulos
-events=$(gcalcli --nocolor agenda --nodeclined --details=url --details=title --tsv)
+temp_file="/tmp/events_list.tsv"
+
+if [ -f "$temp_file" ] && [ -s "$temp_file" ]; then
+    events=$(cat "$temp_file")
+else
+    events=$(gcalcli --nocolor agenda --nodeclined --details=url --details=title --tsv)
+fi
 
 # Testando o valor de $events
 # Verifica se há eventos
