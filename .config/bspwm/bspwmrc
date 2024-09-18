@@ -52,7 +52,7 @@ nitrogen --restore &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/ &
 # Picom
-# picom -b &
+picom -b --fade-in-step=1 --fade-out-step=1 --fade-delta=0 &
 # Network Applet
 nm-applet --indicator &
 
