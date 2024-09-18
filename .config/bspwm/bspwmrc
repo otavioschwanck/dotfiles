@@ -20,10 +20,10 @@ bspc config focus_follows_pointer true
 bspc config single_monocle false
 
 bspc rule -a Google-chrome desktop='^1'
-bspc rule -a WebApp-Discord5213 desktop='^5' # Actually is zapzap
-bspc rule -a WebApp-YoutubeMusic1094 desktop='^6'
+bspc rule -a "Google-chrome:web.whatsapp.com" desktop='^5'
+bspc rule -a "Google-chrome:music.youtube.com" desktop='^6'
 # bspc rule -a Alacritty desktop='^2'
-bspc rule -a discord desktop='^3'
+bspc rule -a "Google-chrome:discord.com__channels_@me" desktop='^3'
 bspc rule -a postman desktop='^4'
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Yad state=floating
@@ -65,8 +65,8 @@ xsetroot -cursor_name left_ptr &
 sleep 4
 
 # Apps autostart
-dex ~/.local/share/applications/WebApp-Discord5213.desktop & # actually is zapzap
-discord &
+dex ~/.local/share/applications/WebApp-Whatsapp2944.desktop &
+dex ~/.local/share/applications/WebApp-Discord6612.desktop &
 dex ~/.local/share/applications/WebApp-YoutubeMusic1094.desktop &
 google-chrome-stable &
 bspc desktop -f 2 &
