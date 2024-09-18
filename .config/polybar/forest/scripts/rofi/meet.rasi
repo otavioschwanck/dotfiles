@@ -25,13 +25,13 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px 0px 0px 0px;
-	border-color:					@ac;
+    border:							1px 1px 1px 1px;
+    border-color:					@ac;
     border-radius:                  0px;
-	width:							350px;
-    location:                       center;
-    x-offset:                       0;
-    y-offset:                       0;
+    width:							350px;
+    location:                       north;
+    x-offset:                       200;
+    y-offset:                       40;
 }
 
 prompt {
