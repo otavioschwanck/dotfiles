@@ -62,11 +62,13 @@ xsetroot -cursor_name left_ptr &
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
 
-sleep 4
+sleep 3
 
 # Apps autostart
+google-chrome-stable &
+sleep 2
+
 dex ~/.local/share/applications/WebApp-Whatsapp2944.desktop &
 dex ~/.local/share/applications/WebApp-Discord6612.desktop &
 dex ~/.local/share/applications/WebApp-YoutubeMusic1094.desktop &
-google-chrome-stable &
 bspc desktop -f 2 &
