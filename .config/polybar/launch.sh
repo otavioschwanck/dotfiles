@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+eval "$(pyenv init -)" # to use gcalcli
+eval "$(pyenv virtualenv-init -)"
+
 dir="$HOME/.config/polybar"
 themes=(`ls --hide="launch.sh" $dir`)
 
