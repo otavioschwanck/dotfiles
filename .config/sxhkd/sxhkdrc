@@ -134,28 +134,28 @@ super + r
 
 # Move window
 super + shift + 1
-  bspc node -d I
+  bspc node -d I; bspc desktop -f I
 
 super + shift + 2
-  bspc node -d II
+  bspc node -d II; bspc desktop -f II
 
 super + shift + 3
-  bspc node -d III
+  bspc node -d III; bspc desktop -f III
 
 super + shift + 4
-  bspc node -d IV
+  bspc node -d IV; bspc desktop -f IV
 
 super + shift + q
-  bspc node -d V
+  bspc node -d V; bspc desktop -f V
 
 super + shift + w
-  bspc node -d VI
+  bspc node -d VI; bspc desktop -f VI
 
 super + shift + e
-  bspc node -d VII
+  bspc node -d VII; bspc desktop -f VII
 
 super + shift + r
-  bspc node -d VIII
+  bspc node -d VIII; bspc desktop -f VIII
 
 #
 # preselect

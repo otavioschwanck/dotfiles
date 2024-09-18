@@ -26,51 +26,24 @@ window {
     background-color:               @bg;
     text-color:                     @fg;
     border:							1px 1px 1px 1px;
-    border-color:					@ac;
+    border-color:					@bd;
     border-radius:                  0px;
     width:							350px;
     location:                       north;
-    x-offset:                       200;
+    x-offset:                       140;
     y-offset:                       40;
 }
 
 prompt {
-    enabled: 						true;
-	padding: 						0px 0px 0px 10px;
-	background-color: 				@bga;
-	text-color: 					@fg;
+  enabled: 						false;
 }
 
 textbox-prompt-colon {
-	padding: 						0px;
-	background-color: 				@bga;
-	text-color: 					@ac;
-	expand: false;
-	str: "";
-	font:							"feather 8";
-}
-
-entry {
-    background-color:               @al;
-    text-color:                     @fg;
-    placeholder-color:              @fg;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search...";
-	padding: 						0px 0px 0px 5px;
-    blink:                          true;
+  enabled: false;
 }
 
 inputbar {
-	children: 						[ textbox-prompt-colon, prompt ];
-    background-color:               @bga;
-    text-color:                     @fg;
-    expand:                         false;
-	border:							0px 0px 1px 0px;
-    border-radius:                  0px;
-	border-color:					@se;
-    margin:                         0px;
-    padding:                        10px;
+  enabled: false;
 }
 
 listview {
