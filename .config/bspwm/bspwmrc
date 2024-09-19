@@ -28,7 +28,6 @@ bspc rule -a Yad state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-
 # Border
 bspc config focused_border_color        "#d65d0e"
 bspc config normal_border_color         "#3c3836"
@@ -50,15 +49,14 @@ nitrogen --restore &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/ &
 # Picom
-picom -b --fade-in-step=1 --fade-out-step=1 --fade-delta=0 &
+picom &
 # Network Applet
 nm-applet --indicator &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
 
-# Low battery notifier
-~/.config/bspwm/scripts/low_bat_notifier.sh
+~/.config/polybar/launch.sh --forest
 
 sleep 3
 
@@ -70,7 +68,3 @@ dex ~/.local/share/applications/WebApp-webwhatsappcom0406.desktop
 discord &
 dex ~/.local/share/applications/WebApp-music3364.desktop
 bspc desktop -f 2 &
-
-sleep 15
-
-~/.config/polybar/launch.sh --forest
