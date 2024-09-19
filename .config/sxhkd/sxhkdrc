@@ -67,8 +67,12 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s}
-	bspc node -t {tiled,pseudo_tiled,floating}
+super + s
+    if [ -z "$(bspc query -N -n focused.floating)" ]; then \
+        bspc node focused -t floating; \
+    else \
+        bspc node focused -t tiled; \
+    fi
 
 # set the node flags
 super + ctrl + {m,x,y,z}
