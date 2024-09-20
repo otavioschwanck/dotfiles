@@ -9,26 +9,30 @@ return {
       local wk = require("which-key")
 
       local defaults = {
-        ["<leader>cc"] = { name = "+Toggle Case" },
-        ["<leader>t"] = { name = "+Test" },
-        ["<leader>l"] = { name = "+Tmux" },
-        ["<leader>r"] = { name = "+Rails" },
-        ["<leader>o"] = { name = "+Open" },
-        ["<leader>p"] = { name = "+Copilot" },
-        ["<leader>ob"] = { name = "+Brownie" },
-        ["<leader>op"] = { name = "+Prod Consoles" },
-        ["<leader>h"] = { name = "+Help" },
-        ["<leader>w"] = { name = "+Window" },
-        ["<leader>b"] = { name = "+Buffer" },
-        ["<leader>c"] = { name = "+Code" },
-        ["<leader>f"] = { name = "+File" },
-        ["<leader>g"] = { name = "+Git" },
-        ["<leader>q"] = { name = "+Quit/Close" },
-        ["<leader>s"] = { name = "+Search" },
+        { "<leader>b",  group = "Buffer" },
+        { "<leader>c",  group = "Code" },
+        { "<leader>cc", group = "Toggle Case" },
+        { "<leader>f",  group = "File" },
+        { "<leader>g",  group = "Git" },
+        { "<leader>h",  group = "Help" },
+        { "<leader>l",  group = "Tmux" },
+        { "<leader>o",  group = "Open" },
+        { "<leader>ob", group = "Brownie" },
+        { "<leader>op", group = "Prod Consoles" },
+        { "<leader>p",  group = "Copilot" },
+        { "<leader>q",  group = "Quit/Close" },
+        { "<leader>r",  group = "Rails" },
+        { "<leader>s",  group = "Search" },
+        { "<leader>t",  group = "Test" },
+        { "<leader>w",  group = "Window" },
       }
 
-      wk.setup({})
-      wk.register(defaults)
+      wk.setup({
+        icons = {
+          mappings = false,
+        }
+      })
+      wk.add(defaults)
     end,
   },
 }

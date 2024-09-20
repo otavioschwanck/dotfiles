@@ -28,7 +28,7 @@ return {
         lspconfig[lang].setup({ capabilities = lsp_capabilities })
       end
 
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = lsp_capabilities,
       })
 
