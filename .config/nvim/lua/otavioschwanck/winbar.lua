@@ -1,14 +1,10 @@
 local M = {}
 
-local palette = {
-  text_path = "#928374",
-  file = "#ebdbb2",
-  red = "#cc241d",
-}
+local catppuccin_palette = require("catppuccin.palettes").get_palette()
 
-vim.api.nvim_set_hl(0, "WinBarPath", { fg = palette.text_path })
-vim.api.nvim_set_hl(0, "WinBarFileName", { fg = palette.file })
-vim.api.nvim_set_hl(0, "WinBarModified", { fg = palette.red })
+vim.api.nvim_set_hl(0, "WinBarPath", { fg = catppuccin_palette.overlay2 })
+vim.api.nvim_set_hl(0, "WinBarFileName", { fg = catppuccin_palette.text })
+vim.api.nvim_set_hl(0, "WinBarModified", { fg = catppuccin_palette.red })
 
 function M.eval()
   local file_path = vim.api.nvim_eval_statusline("%f", {}).str

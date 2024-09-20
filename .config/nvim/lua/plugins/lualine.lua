@@ -16,9 +16,16 @@ return {
     config = function()
       vim.o.laststatus = vim.g.lualine_laststatus
 
+      local theme = require("lualine.themes.catppuccin-mocha")
+      local catppuccin_colors = require("catppuccin.palettes").get_palette()
+
+      theme.normal.c.bg = catppuccin_colors.surface0
+      theme.inactive.c.bg = catppuccin_colors.surface0
+      theme.inactive.a.bg = catppuccin_colors.surface0
+
       local open_terms = {
         require("tmux-awesome-manager.src.integrations.status").open_terms,
-        color = { fg = "green" },
+        color = { fg = catppuccin_colors.green },
       }
 
       local substitute = {
@@ -35,6 +42,7 @@ return {
           },
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
+          theme = theme,
           globalstatus = true,
         },
         sections = {
