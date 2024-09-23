@@ -6,6 +6,9 @@ os:
 gui:
   showIcons: true
   showFileTree: false
+  theme:
+    selectedLineBgColor:
+      - black
 
 keybinding:
   files:
