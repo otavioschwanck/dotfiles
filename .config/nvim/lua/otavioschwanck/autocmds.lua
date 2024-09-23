@@ -14,7 +14,7 @@ function M.set()
   })
 
   local two_space_languages =
-    { "ruby", "yaml", "javascript", "typescript", "typescriptreact", "javascriptreact", "eruby", "lua" }
+  { "ruby", "yaml", "javascript", "typescript", "typescriptreact", "javascriptreact", "eruby", "lua" }
 
   local four_space_languages = { "solidity" }
 

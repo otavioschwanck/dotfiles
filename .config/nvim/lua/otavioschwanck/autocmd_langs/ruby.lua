@@ -5,7 +5,7 @@ require("otavioschwanck.autocmd_langs.base").create_au_for_lang("ruby", function
   local v = utils.v_buf
 
   -- Leader root to be quick
-  n("<leader>=", ":w | :silent !bundle exec rubocop -A %<CR>:e %<CR>", buf.buf)
+  n("<leader>=", ":w | :silent !bundle exec rubocop -A %<CR>:e %<CR>", "Rubocop", buf.buf)
   n("<leader>tc", require("otavioschwanck.rspec").clear_diagnostics, "Clear RSpec diagnostics")
   n("<leader>mc", require("otavioschwanck.lang_helpers.ruby").get_class_name, "Get Class Name", buf.buf)
   n("<leader>mC", require("otavioschwanck.lang_helpers.ruby").search_class_name, "Search Class Name", buf.buf)
