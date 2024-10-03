@@ -126,6 +126,7 @@ mode "$mode_launcher" {
     bindsym g exec google-chrome-stable; mode "default"
     bindsym c exec gnome-calculator; mode "default"
     bindsym f exec nautilus; mode "default"
+    bindsym p exec pavucontrol; mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -147,4 +148,5 @@ assign [instance="crx_cinhimbnkkaeohfgghhklpknlkffjgod"] $ws5
 assign [class="Google-chrome"] $ws1
 assign [class="discord"] $ws3
 for_window [class="gnome-calculator"] floating enable size 400 200
+for_window [class="Pavucontrol"] floating enable size 150 150
 for_window [class="nautilus"] floating enable size 400 200
