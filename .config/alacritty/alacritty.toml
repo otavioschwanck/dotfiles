@@ -2,7 +2,7 @@
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 17.0
+size = 16.0
 
 [font.normal]
 family = "Ubuntu Mono Nerd Font"

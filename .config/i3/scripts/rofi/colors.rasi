@@ -1,0 +1,11 @@
+/* colors */
+
+* {
+  al:   #00000000;  /* Transparente */
+  bg:   #2A2A2E;    /* Fundo escuro */
+  bga:  #383838;    /* Fundo alternativo */
+  fg:   #E5E5E5;    /* Cor de texto */
+  ac:   #FF00FF;    /* Magenta vibrante */
+  se:   #C084F2;    /* Magenta suave (seleção) */
+  bd:   #B5179E;    /* Borda com tom magenta */
+}

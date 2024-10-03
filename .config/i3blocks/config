@@ -1,0 +1,75 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/share/i3blocks/$BLOCK_NAME
+separator_block_width=5
+markup=none
+separator=true
+
+# [window]
+# interval=1
+# command=/home/$USER/.config/i3/scripts/title.sh
+# separator=true
+# separator_block_width=20
+# color=#fff
+# align=left
+#
+[volume]
+command=~/.config/i3/scripts/volume.sh
+interval=1
+signal=10
+separator=true
+separator_block_width=20
+
+[meet]
+command=/home/$USER/.config/i3blocks/scripts/meet.sh
+interval=59
+separator=true
+separator_block_width=20
+
+# [wifi]
+# instance=wlx242fd0d90bc3
+# interval=10
+# separator=true
+
+# Date Time
+#
+[time]
+command=date '+%d/%m/%Y %H:%M'
+interval=1
+separator=true
+separator_block_width=20
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#instance=CAPS
+#interval=once
+#signal=11

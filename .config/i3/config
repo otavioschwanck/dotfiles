@@ -1,0 +1,150 @@
+default_border pixel 1
+default_floating_border pixel 1
+
+# exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg
+
+for_window [class="^.*"] border pixel 1
+
+set $mod Mod4
+
+font pango:Ubuntu Nerd Font 10
+
+exec --no-startup-id compton &
+exec --no-startup-id dex --autostart --environment i3
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+exec --no-startup-id nm-applet
+
+exec --no-startup-id dex ~/.local/share/applications/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop
+exec --no-startup-id dex ~/.local/share/applications/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop
+exec --no-startup-id flatpak run com.discordapp.Discord
+exec --no-startup-id google-chrome-stable
+
+exec_always feh --bg-scale ~/Imagens/wallpaper.jpeg
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+floating_modifier $mod
+
+tiling_drag modifier titlebar
+
+bindsym $mod+Shift+c kill
+
+bindsym $mod+d exec ~/.config/i3/scripts/launcher.sh
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
+bindsym $mod+Ctrl+l move right
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+a layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+space focus mode_toggle
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+q workspace number $ws5
+bindsym $mod+w workspace number $ws6
+bindsym $mod+e workspace number $ws7
+bindsym $mod+r workspace number $ws8
+
+bindsym $mod+Shift+1 move container to workspace number $ws1; workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2; workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3; workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4; workspace number $ws4
+bindsym $mod+Shift+q move container to workspace number $ws5; workspace number $ws5
+bindsym $mod+Shift+w move container to workspace number $ws6; workspace number $ws6
+bindsym $mod+Shift+e move container to workspace number $ws7; workspace number $ws7
+bindsym $mod+Shift+r move container to workspace number $ws8; workspace number $ws8
+
+bindsym $mod+Escape exec ~/.config/i3/scripts/powermenu.sh
+bindsym $mod+Ctrl+r restart
+
+set $resize_delta 10
+
+bindsym $mod+m layout toggle split
+
+bindsym $mod+Shift+h exec "i3-msg resize grow left $resize_delta px or $resize_delta ppt || i3-msg resize shrink right $resize_delta px or $resize_delta ppt"
+bindsym $mod+Shift+l exec "i3-msg resize grow right $resize_delta px or $resize_delta ppt || i3-msg resize shrink left $resize_delta px or $resize_delta ppt"
+bindsym $mod+Shift+j exec "i3-msg resize grow down $resize_delta px or $resize_delta ppt || i3-msg resize shrink up $resize_delta px or $resize_delta ppt"
+bindsym $mod+Shift+k exec "i3-msg resize grow up $resize_delta px or $resize_delta ppt || i3-msg resize shrink down $resize_delta px or $resize_delta ppt"
+
+focus_on_window_activation focus
+for_window [urgent=latest] focus
+
+bindsym $mod+Tab workspace back_and_forth
+
+bar {
+    status_command i3blocks
+    position top
+    font pango:Ubuntu, FontAwesome 11
+    colors {
+        separator #2A2A2E
+        background #1E1E1E
+        statusline #E5E5E5
+        focused_workspace #586E75 #383838 #E5E5E5
+        active_workspace #262626 #383838 #262626
+        inactive_workspace #1E1E1E #586E75 #1E1E1E
+        urgent_workspace #FF00FF #FF00FF #FDF6E3
+
+        statusline         #E5E5E5
+        separator          #00000000
+    }
+}
+
+set $mode_launcher Launcher
+bindsym $mod+o mode "$mode_launcher"
+
+mode "$mode_launcher" {
+    bindsym g exec google-chrome-stable; mode "default"
+    bindsym c exec gnome-calculator; mode "default"
+    bindsym f exec nautilus; mode "default"
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+# apps
+bindsym $mod+shift+a exec flameshot gui
+bindsym $mod+Return exec alacritty
+bindsym $mod+shift+m exec ~/.config/i3/scripts/list_meets.sh
+bindsym $mod+shift+f exec ~/.config/i3/scripts/find_files.sh
+
+# Windows in certain workspaces
+
+# Whatsapp
+assign [instance="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] $ws5
+
+# Youtube
+assign [instance="crx_cinhimbnkkaeohfgghhklpknlkffjgod"] $ws5
+assign [class="Google-chrome"] $ws1
+assign [class="discord"] $ws3
+for_window [class="gnome-calculator"] floating enable size 400 200
+for_window [class="nautilus"] floating enable size 400 200
