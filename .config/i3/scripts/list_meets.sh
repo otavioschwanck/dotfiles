@@ -5,7 +5,7 @@ temp_file="/tmp/events_list.tsv"
 if [ -f "$temp_file" ] && [ -s "$temp_file" ]; then
     events=$(cat "$temp_file")
 else
-    events=$(gcalcli --nocolor agenda --nodeclined --details=url --details=title --tsv)
+    events=$(~/.pyenv/shims/gcalcli --nocolor agenda --nodeclined --details=url --details=title --tsv)
 fi
 
 if [ -z "$events" ]; then
@@ -22,7 +22,7 @@ formatted_events=$(echo "$events" | awk -F'\t' 'NR>1 {
     printf "%s %s-%s - %s\n", newdate, $2, $4, $7
 }')
 
-dir="~/.config/polybar/forest/scripts/rofi"
+dir="~/.config/i3/scripts/rofi"
 
 selected_event=$(echo "$formatted_events" | rofi -dmenu -p "Reuniões"  -theme $dir/meet.rasi)
 

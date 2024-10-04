@@ -29,9 +29,9 @@ window {
     border-color:					@bd;
     border-radius:                  0px;
     width:							350px;
-    location:                       north;
-    x-offset:                       140;
-    y-offset:                       40;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
 }
 
 prompt {
@@ -94,7 +94,7 @@ element-text {
 element selected {
     background-color:               @se;
     text-color:                     @bg;
-	border:							0px 0px 0px 0px;
+    border:							0px 0px 0px 0px;
     border-radius:                  0px;
     border-color:                  	@ac;
 }

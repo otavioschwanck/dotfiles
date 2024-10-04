@@ -45,10 +45,11 @@ separator=true
 separator_block_width=20
 
 [meet]
-command=/home/$USER/.config/i3blocks/scripts/meet.sh
+command=/home/$USER/.config/i3/scripts/show_meet.sh
 interval=59
 separator=true
 separator_block_width=20
+color=#fff
 
 # [wifi]
 # instance=wlx242fd0d90bc3

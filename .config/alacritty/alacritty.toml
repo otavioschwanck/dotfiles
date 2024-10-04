@@ -2,10 +2,10 @@
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 16.0
+size = 17.0
 
 [font.normal]
-family = "Ubuntu Mono Nerd Font"
+family = "Terminess Nerd Font"
 
 [env]
 TERM = "xterm-256color"

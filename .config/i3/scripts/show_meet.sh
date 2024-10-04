@@ -5,14 +5,14 @@ MESSAGE_TIME=10
 
 current_time=$(date +%H:%M)
 
-next_event=$(gcalcli --nocolor agenda "$current_time" "23:59" --nostarted --nodeclined --details=url --details=title --tsv | grep "$(date +%Y-%m-%d)" | head -n 1)
+next_event=$(~/.pyenv/shims/gcalcli --nocolor agenda "$current_time" "23:59" --nostarted --nodeclined --details=url --details=title --tsv | grep "$(date +%Y-%m-%d)" | head -n 1)
 
 current_minute=$(date +%M | sed 's/^0*//') 
 
 if [ $((current_minute % 3)) -eq 0 ]; then
   temp_file="/tmp/events_list.tsv"
 
-  gcalcli --nocolor agenda --nodeclined --details=url --details=title --tsv > "$temp_file"
+  ~/.pyenv/shims/gcalcli --nocolor agenda --nodeclined --details=url --details=title --tsv > "$temp_file"
 fi
 
 if [ -n "$next_event" ]; then

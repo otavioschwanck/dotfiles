@@ -7,7 +7,7 @@ for_window [class="^.*"] border pixel 1
 
 set $mod Mod4
 
-font pango:Ubuntu Nerd Font 10
+font pango:Terminess Nerd Font 10
 
 exec --no-startup-id compton &
 exec --no-startup-id dex --autostart --environment i3
@@ -49,9 +49,8 @@ bindsym $mod+Ctrl+l move right
 
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
-bindsym $mod+a layout toggle split
+bindsym $mod+a layout tabbed
+bindsym $mod+s layout toggle split
 
 bindsym $mod+Shift+space floating toggle
 
@@ -104,7 +103,7 @@ bindsym $mod+Tab workspace back_and_forth
 bar {
     status_command i3blocks
     position top
-    font pango:Ubuntu, FontAwesome 11
+    font pango:Terminess Nerd Font, FontAwesome 11
     colors {
         separator #2A2A2E
         background #1E1E1E
@@ -150,3 +149,10 @@ assign [class="discord"] $ws3
 for_window [class="gnome-calculator"] floating enable size 400 200
 for_window [class="Pavucontrol"] floating enable size 150 150
 for_window [class="nautilus"] floating enable size 400 200
+
+for_window [window_role="dialog"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="popup"] floating enable
+
+for_window [instance="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] floating disable
+for_window [instance="crx_cinhimbnkkaeohfgghhklpknlkffjgod"] floating disable
