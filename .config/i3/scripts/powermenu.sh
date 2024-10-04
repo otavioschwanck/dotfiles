@@ -59,7 +59,7 @@ case $chosen in
         ;;
     $lock)
 		if [[ -f /usr/bin/i3lock ]]; then
-      i3lock-fancy
+      i3lock-fancy -f Terminess-Nerd-Font -t "Fala meu guri, PC ta bloqueado, qual a senha?"
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
 		fi
