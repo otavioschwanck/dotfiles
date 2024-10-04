@@ -60,7 +60,7 @@ color=#fff
 #
 [time]
 command=date '+%d/%m/%Y %H:%M'
-interval=1
+interval=5
 separator=true
 separator_block_width=20
 
