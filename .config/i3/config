@@ -1,7 +1,7 @@
 default_border pixel 1
 default_floating_border pixel 1
 
-# exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg
 
 for_window [class="^.*"] border pixel 1
 
@@ -157,3 +157,8 @@ for_window [window_role="popup"] floating enable
 
 for_window [instance="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] floating disable
 for_window [instance="crx_cinhimbnkkaeohfgghhklpknlkffjgod"] floating disable
+
+exec --no-startup-id sleep 4;dex ~/.local/share/applications/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop
+exec --no-startup-id sleep 4;dex ~/.local/share/applications/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop
+exec --no-startup-id sleep 4;flatpak run com.discordapp.Discord
+exec --no-startup-id sleep 4;google-chrome-stable
