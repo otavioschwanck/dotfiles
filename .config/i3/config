@@ -16,11 +16,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
 
-exec --no-startup-id dex ~/.local/share/applications/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop
-exec --no-startup-id dex ~/.local/share/applications/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop
-exec --no-startup-id flatpak run com.discordapp.Discord
-exec --no-startup-id google-chrome-stable
-
 exec_always feh --bg-scale ~/Imagens/wallpaper.jpeg
 
 set $refresh_i3status killall -SIGUSR1 i3status
