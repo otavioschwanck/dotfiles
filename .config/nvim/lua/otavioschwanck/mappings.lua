@@ -49,6 +49,9 @@ function M.set()
   n("yb", ":%y+<CR>")
 
   -- Leader Mappings
+  -- o
+  n("<leader>oa", require("otavioschwanck.amfi").start_amfi, "Start Amfi")
+
   -- t
   n("<leader>to", "<cmd>cg /tmp/quickfix.out<CR><cmd>copen<CR><cmd>cfirst<CR>", "Open Quickfix Output")
 
