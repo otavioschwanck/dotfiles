@@ -122,14 +122,18 @@ mode "$mode_launcher" {
     bindsym c exec gnome-calculator; mode "default"
     bindsym f exec nautilus; mode "default"
     bindsym p exec pavucontrol; mode "default"
+    bindsym o exec alacritty; mode "default"
+    bindsym $mod+o exec alacritty; mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 
+# Notifications: Dunst
+bindsym $mod+Return exec dunstctl action
+
 # apps
 bindsym $mod+shift+a exec flameshot gui
-bindsym $mod+Return exec alacritty
 bindsym $mod+shift+m exec ~/.config/i3/scripts/list_meets.sh
 bindsym $mod+shift+f exec ~/.config/i3/scripts/find_files.sh
 
