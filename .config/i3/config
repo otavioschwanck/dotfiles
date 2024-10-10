@@ -122,6 +122,7 @@ mode "$mode_launcher" {
     bindsym g exec google-chrome-stable; mode "default"
     bindsym c exec gnome-calculator; mode "default"
     bindsym f exec nautilus; mode "default"
+    bindsym d exec flatpak run com.discordapp.Discord; mode "default"
     bindsym p exec pavucontrol; mode "default"
     bindsym o exec alacritty; mode "default"
     bindsym $mod+o exec alacritty; mode "default"
