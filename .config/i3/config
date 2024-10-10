@@ -99,7 +99,7 @@ bindsym $mod+Tab workspace back_and_forth
 bar {
     status_command i3blocks
     position top
-    font pango:Terminess Nerd Font, FontAwesome 11
+    font pango:Ubuntu Nerd Font, FontAwesome 11
 
     colors {
         separator #2A2A2E
