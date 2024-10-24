@@ -28,12 +28,12 @@ return {
         color = { fg = catppuccin_colors.green },
       }
 
-      local substitute = {
-        require("cool-substitute.status").status_with_icons,
-        color = function()
-          return { fg = require("cool-substitute.status").status_color() }
-        end,
-      }
+      -- local substitute = {
+      --   require("cool-substitute.status").status_with_icons,
+      --   color = function()
+      --     return { fg = require("cool-substitute.status").status_color() }
+      --   end,
+      -- }
 
       require("lualine").setup({
         options = {
@@ -48,7 +48,7 @@ return {
         sections = {
           lualine_a = { "mode" },
           lualine_b = {},
-          lualine_c = { "diagnostics", "diff", substitute },
+          lualine_c = { "diagnostics", "diff" },
           lualine_x = { open_terms, "branch" },
           lualine_y = { "progress" },
           lualine_z = { "location" },

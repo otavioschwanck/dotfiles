@@ -155,6 +155,7 @@ for_window [class="nautilus"] floating enable size 400 200
 for_window [window_role="dialog"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="popup"] floating enable
+for_window [window_role="1Password"] floating enable 400 200
 
 for_window [instance="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] floating disable
 for_window [instance="crx_cinhimbnkkaeohfgghhklpknlkffjgod"] floating disable

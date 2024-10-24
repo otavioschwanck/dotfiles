@@ -35,7 +35,7 @@ function M.set()
   c("<C-d>", "<Del>")
 
   -- Basic Editor Stuff
-  n("\\", "<cmd>wall<CR>")
+  -- n("\\", "<cmd>wall<CR>")
   nv("-", "$")
   n(",", "<C-w>w")
   n("<C-w>,", "<C-w>W")
@@ -50,8 +50,10 @@ function M.set()
 
   -- Leader Mappings
   -- o
-  n("<leader>oa", require("otavioschwanck.amfi").start_amfi, "Start Amfi")
-  n("<leader>oR", require("otavioschwanck.amfi").restart_amfi, "Restart Amfi")
+  n("<leader>oA", function() require("otavioschwanck.amfi").start_amfi(false) end, "Start Amfi [no dapp]")
+  n("<leader>oa", function() require("otavioschwanck.amfi").start_amfi(true) end, "Start Amfi")
+  n("<leader>oR", function() require("otavioschwanck.amfi").restart_amfi(false) end, "Restart Amfi [no dapp]")
+  n("<leader>or", function() require("otavioschwanck.amfi").restart_amfi(true) end, "Restart Amfi")
 
   -- t
   n("<leader>to", "<cmd>cg /tmp/quickfix.out<CR><cmd>copen<CR><cmd>cfirst<CR>", "Open Quickfix Output")
