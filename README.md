@@ -53,7 +53,7 @@ Gems:
 solargraph neovim bundler
 
 Pip:
-pip install neovim-remote pynvim --quiet
+pip3 install neovim-remote pynvim --quiet
 
 # SKHD and Yabai <3
 brew install koekeishiya/formulae/yabai

@@ -35,16 +35,6 @@ return {
         end,
         desc = "Next Arrow",
       },
-      {
-        "<C-j>",
-        "<cmd>Arrow next_buffer_bookmark<CR>",
-        desc = "Save Current Line",
-      },
-      {
-        "<C-k>",
-        "<cmd>Arrow prev_buffer_bookmark<CR>",
-        desc = "Save Current Line",
-      },
     },
   },
 }

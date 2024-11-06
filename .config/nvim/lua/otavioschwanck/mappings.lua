@@ -35,7 +35,7 @@ function M.set()
   c("<C-d>", "<Del>")
 
   -- Basic Editor Stuff
-  -- n("\\", "<cmd>wall<CR>")
+  n("\\", "<cmd>wall<CR>")
   nv("-", "$")
   n(",", "<C-w>w")
   n("<C-w>,", "<C-w>W")

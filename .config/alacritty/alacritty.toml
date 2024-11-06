@@ -231,7 +231,7 @@ mods = "Command"
 
 [[keyboard.bindings]]
 chars = "\u0018d"
-key = "D"
+key = "X"
 mods = "Shift|Command"
 
 [[keyboard.bindings]]
@@ -481,7 +481,7 @@ mods = "Alt"
 
 [[keyboard.bindings]]
 chars = "\u0018d"
-key = "D"
+key = "X"
 mods = "Shift|Alt"
 
 [[keyboard.bindings]]
