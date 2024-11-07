@@ -122,10 +122,7 @@ return {
         },
         pickers = {
           live_grep = {
-            layout_config = {
-              preview_cutoff = 120,
-              width = 0.9,
-            },
+            layout_strategy = "vertical",
           },
           find_files = {
             hidden = true,
