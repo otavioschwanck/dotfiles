@@ -94,7 +94,7 @@ return {
           bufmap("n", "gI", telescope.lsp_implementations)
 
           -- Jumps to the definition of the type symbol
-          bufmap("n", "gT", telescope.lsp_type_definitions)
+          bufmap("n", "gt", telescope.lsp_type_definitions)
 
           -- Lists all the references
           bufmap("n", "gr", telescope.lsp_references)
