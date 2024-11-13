@@ -13,6 +13,25 @@ local conf = require("telescope.config").values
 local action_set = require("telescope.actions.set")
 local action_state = require("telescope.actions.state")
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "TelescopeResults",
+  callback = function(ctx)
+    vim.api.nvim_buf_call(ctx.buf, function()
+      vim.fn.matchadd("TelescopeParent", "\t\t.*$")
+      vim.api.nvim_set_hl(0, "TelescopeParent", { link = "Comment" })
+    end)
+  end,
+})
+
+function M.filename_first(_, path)
+  local tail = vim.fs.basename(path)
+  local parent = vim.fs.dirname(path)
+
+  if parent == "." then return tail end
+
+  return string.format("%s\t\t%s", tail, parent)
+end
+
 function M.live_grep_on_folder(opts)
   opts = opts or {}
   local data = {}
@@ -27,41 +46,41 @@ function M.live_grep_on_folder(opts)
   table.insert(data, 1, "." .. os_sep)
 
   pickers
-    .new(opts, {
-      prompt_title = "Folders for Live Grep",
-      finder = finders.new_table({ results = data, entry_maker = make_entry.gen_from_file(opts) }),
-      previewer = conf.file_previewer(opts),
-      sorter = conf.file_sorter(opts),
-      additional_args = { "-j1" },
-      attach_mappings = function(prompt_bufnr)
-        action_set.select:replace(function()
-          local current_picker = action_state.get_current_picker(prompt_bufnr)
-          local dirs = {}
-          local selections = current_picker:get_multi_selection()
-          if vim.tbl_isempty(selections) then
-            table.insert(dirs, action_state.get_selected_entry().value)
-          else
-            for _, selection in ipairs(selections) do
-              table.insert(dirs, selection.value)
+      .new(opts, {
+        prompt_title = "Folders for Live Grep",
+        finder = finders.new_table({ results = data, entry_maker = make_entry.gen_from_file(opts) }),
+        previewer = conf.file_previewer(opts),
+        sorter = conf.file_sorter(opts),
+        additional_args = { "-j1" },
+        attach_mappings = function(prompt_bufnr)
+          action_set.select:replace(function()
+            local current_picker = action_state.get_current_picker(prompt_bufnr)
+            local dirs = {}
+            local selections = current_picker:get_multi_selection()
+            if vim.tbl_isempty(selections) then
+              table.insert(dirs, action_state.get_selected_entry().value)
+            else
+              for _, selection in ipairs(selections) do
+                table.insert(dirs, selection.value)
+              end
             end
-          end
 
-          actions.close(prompt_bufnr)
+            actions.close(prompt_bufnr)
 
-          local cwd = vim.fn.getcwd() .. "/"
+            local cwd = vim.fn.getcwd() .. "/"
 
-          for i, item in ipairs(dirs) do
-            dirs[i] = string.gsub(item, cwd, "")
-          end
+            for i, item in ipairs(dirs) do
+              dirs[i] = string.gsub(item, cwd, "")
+            end
 
-          require("telescope.builtin").live_grep({
-            search_dirs = dirs,
-          })
-        end)
-        return true
-      end,
-    })
-    :find()
+            require("telescope.builtin").live_grep({
+              search_dirs = dirs,
+            })
+          end)
+          return true
+        end,
+      })
+      :find()
 end
 
 M.project_files = function()

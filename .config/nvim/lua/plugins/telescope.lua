@@ -127,12 +127,14 @@ return {
           },
           find_files = {
             hidden = true,
+            path_display = require("otavioschwanck.telescope").filename_first,
           },
           git_files = {
             show_untracked = true,
+            path_display = require("otavioschwanck.telescope").filename_first,
           },
           buffers = {
-            path_display = require("otavioschwanck.buffer_path_display"),
+            path_display = require("otavioschwanck.telescope").filename_first,
             layout_config = {
               preview_width = 0.5,
             },
