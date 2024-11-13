@@ -13,6 +13,7 @@ return {
         "solidity",
         "yamlls",
         "jsonls",
+        "cssls"
       }
 
       require("mason").setup()

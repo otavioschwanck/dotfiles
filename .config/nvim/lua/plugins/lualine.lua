@@ -19,39 +19,51 @@ return {
       local theme = require("lualine.themes.catppuccin-mocha")
       local catppuccin_colors = require("catppuccin.palettes").get_palette()
 
+      theme.normal.b.bg = catppuccin_colors.surface1
       theme.normal.c.bg = catppuccin_colors.surface0
-      theme.inactive.c.bg = catppuccin_colors.surface0
-      theme.inactive.a.bg = catppuccin_colors.surface0
+      theme.inactive.c.bg = catppuccin_colors.bg
 
       local open_terms = {
         require("tmux-awesome-manager.src.integrations.status").open_terms,
         color = { fg = catppuccin_colors.green },
       }
 
-      -- local substitute = {
-      --   require("cool-substitute.status").status_with_icons,
-      --   color = function()
-      --     return { fg = require("cool-substitute.status").status_color() }
-      --   end,
-      -- }
+      local function arrow()
+        local status = require("arrow.statusline").text_for_statusline_with_icons()
+
+        return status
+      end
+
+      local arrow_module = {
+        arrow,
+        color = { fg = catppuccin_colors.pink },
+      }
 
       require("lualine").setup({
         options = {
           disabled_filetypes = {
             statusline = { "dashboard" },
           },
-          component_separators = { left = "", right = "" },
-          section_separators = { left = "", right = "" },
+          section_separators = { left = '', right = '' },
+          component_separators = { left = '', right = '' },
           theme = theme,
-          globalstatus = true,
+          globalstatus = false,
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = {},
+          lualine_b = { "filename", arrow_module },
           lualine_c = { "diagnostics", "diff" },
           lualine_x = { open_terms, "branch" },
           lualine_y = { "progress" },
           lualine_z = { "location" },
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { 'filename', arrow },
+          lualine_x = { 'location' },
+          lualine_y = {},
+          lualine_z = {}
         },
       })
     end,

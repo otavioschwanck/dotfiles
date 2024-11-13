@@ -4,6 +4,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
+      "fdschmidt93/telescope-egrepify.nvim",
       "nvim-treesitter/nvim-treesitter-textobjects",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -130,6 +131,12 @@ return {
           git_files = {
             show_untracked = true,
           },
+          buffers = {
+            path_display = require("otavioschwanck.buffer_path_display"),
+            layout_config = {
+              preview_width = 0.5,
+            },
+          }
         },
         extensions = {
           file_browser = {
@@ -177,6 +184,7 @@ return {
 
       telescope.load_extension("yank_history")
       telescope.load_extension("file_browser")
+      telescope.load_extension "egrepify"
       telescope.load_extension("fzf")
     end,
   },

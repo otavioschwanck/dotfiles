@@ -85,7 +85,7 @@ function M.set()
   -- Fix markdown indentation settings
   vim.g.markdown_recommended_style = 0
 
-  vim.o.winbar = "%{%v:lua.require'otavioschwanck.winbar'.eval()%}"
+  -- vim.o.winbar = "%{%v:lua.require'otavioschwanck.winbar'.eval()%}"
 
   vim.g.format_on_save = true
 end
