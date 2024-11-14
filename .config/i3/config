@@ -105,12 +105,12 @@ bar {
     font pango:Ubuntu Nerd Font, FontAwesome 12
 
     colors {
-        background #313244
+        background #1e1e2e
         statusline #cdd6f4
         focused_workspace #cba6f7 #45475a #cdd6f4
         active_workspace #262626 #313242 #262626
 
-        inactive_workspace #45475a #45475a #9399b2
+        inactive_workspace #313244 #313244 #9399b2
         urgent_workspace #f38ba8 #f38ba8 #FDF6E3
 
         statusline         #cdd6f4
