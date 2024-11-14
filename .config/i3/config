@@ -110,7 +110,7 @@ bar {
         focused_workspace #cba6f7 #45475a #cdd6f4
         active_workspace #262626 #313242 #262626
 
-        inactive_workspace #45475a #45475a #a6adc8
+        inactive_workspace #45475a #45475a #9399b2
         urgent_workspace #f38ba8 #f38ba8 #FDF6E3
 
         statusline         #cdd6f4
