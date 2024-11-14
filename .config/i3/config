@@ -105,7 +105,6 @@ bar {
     font pango:Ubuntu Nerd Font, FontAwesome 12
 
     colors {
-        separator #6c7086
         background #313244
         statusline #cdd6f4
         focused_workspace #cba6f7 #45475a #cdd6f4
@@ -115,7 +114,7 @@ bar {
         urgent_workspace #f38ba8 #f38ba8 #FDF6E3
 
         statusline         #cdd6f4
-        separator          #00000000
+        separator          #6c7086
     }
 }
 
