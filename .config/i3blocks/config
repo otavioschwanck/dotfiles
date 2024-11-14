@@ -49,7 +49,6 @@ command=/home/$USER/.config/i3/scripts/show_meet.sh
 interval=59
 separator=true
 separator_block_width=20
-color=#fff
 
 # [wifi]
 # instance=wlx242fd0d90bc3
@@ -59,7 +58,7 @@ color=#fff
 # Date Time
 #
 [time]
-command=date '+%d/%m/%Y %H:%M'
+command=date '+%d/%m %H:%M'
 interval=5
 separator=true
 separator_block_width=20

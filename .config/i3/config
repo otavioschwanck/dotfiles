@@ -25,6 +25,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+gaps inner 5
+gaps outer 0
+
 floating_modifier $mod
 
 tiling_drag modifier titlebar
@@ -99,18 +102,19 @@ bindsym $mod+Tab workspace back_and_forth
 bar {
     status_command i3blocks
     position top
-    font pango:Ubuntu Nerd Font, FontAwesome 11
+    font pango:Ubuntu Nerd Font, FontAwesome 12
 
     colors {
-        separator #2A2A2E
-        background #1E1E1E
-        statusline #E5E5E5
-        focused_workspace #586E75 #383838 #E5E5E5
-        active_workspace #262626 #383838 #262626
-        inactive_workspace #1E1E1E #586E75 #1E1E1E
-        urgent_workspace #FF00FF #FF00FF #FDF6E3
+        separator #6c7086
+        background #313244
+        statusline #cdd6f4
+        focused_workspace #cba6f7 #45475a #cdd6f4
+        active_workspace #262626 #313242 #262626
 
-        statusline         #E5E5E5
+        inactive_workspace #45475a #45475a #a6adc8
+        urgent_workspace #f38ba8 #f38ba8 #FDF6E3
+
+        statusline         #cdd6f4
         separator          #00000000
     }
 }

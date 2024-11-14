@@ -6,6 +6,7 @@ return {
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
+        transparent_background = true,
         custom_highlights = function()
           return {
             NormalFloat = { link = "Normal" },
