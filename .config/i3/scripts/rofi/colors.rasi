@@ -2,7 +2,7 @@
 
 * {
   al:   #00000000;  /* Transparente */
-  bg:   #31324399;    /* Fundo escuro */
+  bg:   #313243;    /* Fundo escuro */
   bgfull: #313243;    /* Fundo escuro */
   bga:  #383838;    /* Fundo alternativo */
   fg:   #cdd6f4;    /* Cor de texto */
