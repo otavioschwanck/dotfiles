@@ -98,6 +98,7 @@ focus_on_window_activation focus
 for_window [urgent=latest] focus
 
 bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace back_and_forth
 
 bar {
     status_command i3blocks
