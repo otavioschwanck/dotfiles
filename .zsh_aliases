@@ -13,6 +13,7 @@ alias stow_config='cd ~/dotfiles;stow --adopt .'
 alias nvn='NVIM_APPNAME=new-config nvim'
 alias org="cd ~/org;nvim"
 alias reg="vim ~/.config/i3/config"
+alias af="ts amfi"
 
 # Personal Stuff
 alias con='python console.py'
