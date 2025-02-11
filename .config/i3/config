@@ -82,7 +82,8 @@ bindsym $mod+Shift+w move container to workspace number $ws6; workspace number $
 bindsym $mod+Shift+e move container to workspace number $ws7; workspace number $ws7
 bindsym $mod+Shift+r move container to workspace number $ws8; workspace number $ws8
 
-bindsym $mod+Escape exec ~/.config/i3/scripts/powermenu.sh
+bindsym $mod+Escape exec i3lock-fancy
+bindsym $mod+p exec ~/.config/i3/scripts/powermenu.sh
 bindsym $mod+Ctrl+r restart
 
 set $resize_delta 10

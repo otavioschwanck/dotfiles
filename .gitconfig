@@ -16,3 +16,6 @@
 
 [core]
 	excludesFile = ~/.gitignore
+
+[alias]
+    summary = !git-stat-sum \"$@\"

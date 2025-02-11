@@ -43,11 +43,16 @@ return {
         },
       })
 
+      -- lspconfig.ruby_lsp.setup({
+      --   capabilities = lsp_capabilities,
+      -- })
+      --
       lspconfig.solargraph.setup({
         capabilities = lsp_capabilities,
         on_attach = function(client)
           client.server_capabilities.documentFormattingProvider = false
         end,
+        cmd = { "bundle", "exec", "solargraph", "stdio" },
         settings = {
           solargraph = {
             formatting = false,
