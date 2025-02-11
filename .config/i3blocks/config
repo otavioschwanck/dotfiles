@@ -63,6 +63,11 @@ interval=5
 separator=true
 separator_block_width=20
 
+[time-br2]
+label=BR:
+command=TZ=":America/Sao_Paulo" date '+%H:%M'
+interval=5
+
 # Key indicators
 #
 # Add the following bindings to i3 config file:

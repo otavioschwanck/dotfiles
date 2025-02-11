@@ -1,13 +1,8 @@
 return {
-	{
-		"kdheepak/lazygit.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		keys = {
-			{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-			{ "<leader>gT", "<cmd>LazyGitFilterCurrentFile<cr>", desc = "LazyGit Current File" },
-		},
-	},
+  {
+    'voldikss/vim-floaterm',
+    keys = {
+      { "<leader>gg", "<cmd>FloatermNew --width=0.95 --height=0.95 lazygit<CR>", desc = "Lazygit" },
+    }
+  },
 }
