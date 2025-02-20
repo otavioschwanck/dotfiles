@@ -15,6 +15,7 @@ keybinding:
     toggleTreeView: "t"
 
 git:
+  autoRefresh: false
   paging:
     colorArg: always
     pager: delta --dark --paging=never
