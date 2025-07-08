@@ -65,15 +65,15 @@ signal=1
 separator=false
 
 [time]
-command=date '+%d/%m %H:%M'
-interval=5
+command=date '+%d/%m %H:%M:%S'
+interval=1
 separator=true
 separator_block_width=20
 
 [time-br2]
 label=BR:
 command=TZ=":America/Sao_Paulo" date '+%H:%M'
-interval=5
+interval=1
 
 # Key indicators
 #

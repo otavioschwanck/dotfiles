@@ -1,7 +1,7 @@
-os:
-  editPreset: "nvim-remote"
-  edit: 'nvr --remote-send ''<CMD>q<CR><CMD>lua vim.cmd("e " .. {{filename}})<CR>'''
-  editAtLine: 'nvr --remote-send ''<CMD>q<CR><CMD>lua vim.cmd("e " .. {{filename}})<CR>{{line}}G'''
+# os:
+#   editPreset: "nvim-remote"
+#   edit: 'nvr --remote-send ''<CMD>q<CR><CMD>lua vim.cmd("e " .. {{filename}})<CR>'''
+#   editAtLine: 'nvr --remote-send ''<CMD>q<CR><CMD>lua vim.cmd("e " .. {{filename}})<CR>{{line}}G'''
 
 gui:
   showIcons: true
@@ -15,7 +15,6 @@ keybinding:
     toggleTreeView: "t"
 
 git:
-  autoRefresh: false
   paging:
     colorArg: always
     pager: delta --dark --paging=never

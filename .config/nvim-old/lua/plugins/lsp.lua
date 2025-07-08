@@ -55,6 +55,8 @@ return {
         cmd = { "bundle", "exec", "solargraph", "stdio" },
         settings = {
           solargraph = {
+            intellisense = false,
+            codeCompletion = false,
             formatting = false,
             autoformat = false,
             useBundler = true,

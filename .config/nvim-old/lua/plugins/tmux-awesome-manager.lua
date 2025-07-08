@@ -51,6 +51,13 @@ return {
         open_as = "separated_session",
         visit_first_call = false,
       })
+      set("<leader>gg", {
+        cmd = "lazygit",
+        name = "LazyGit",
+        open_as = "window",
+        visit_first_call = true,
+        read_after_cmd = false,
+      })
       set("<leader>od", {
         cmd = "up -d postgres redis",
         name = "Run Docker Stuff",
@@ -91,6 +98,42 @@ return {
         open_as = "separated_session",
         focus_when_call = true,
       })
+
+      set("<leader>opP", {
+        cmd =
+        "aws ssm start-session --profile amfi_prod --target %1",
+        name = "!!!API Prod!!! selecting machine",
+        open_as = "separated_session",
+        focus_when_call = true,
+        questions = {
+          {
+            question = "Machine ID: ",
+            required = true,
+          },
+        },
+      })
+
+      set("<leader>opS", {
+        cmd = "aws ssm start-session --profile amfi --target %1",
+        name = "API STG selecting machine",
+        open_as = "separated_session",
+        focus_when_call = true,
+        questions = {
+          {
+            question = "Machine ID: ",
+            required = true,
+          },
+        },
+      })
+
+      set("<leader>gg", {
+        cmd = "lazygit",
+        name = "LazyGit",
+        open_as = "window",
+        visit_first_call = true,
+        read_after_cmd = false,
+      })
+
 
       set("<leader>ops", {
         cmd = "aws ssm start-session --profile amfi --target $(AWS_PROFILE=amfi ./codedeploy/instance-id.sh stg)",
