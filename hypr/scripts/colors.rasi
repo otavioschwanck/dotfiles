@@ -1,0 +1,12 @@
+/* Catppuccin Mocha colors */
+
+* {
+  al:     #00000000;  /* Transparente */
+  bg:     #1e1e2e;    /* Base - Fundo principal */
+  bgfull: #1e1e2e;    /* Base - Fundo sólido */
+  bga:    #181825;    /* Mantle - Fundo alternativo */
+  fg:     #cdd6f4;    /* Text - Texto principal */
+  ac:     #89b4fa;    /* Blue - Cor de destaque */
+  se:     #cba6f7;    /* Mauve - Cor de seleção */
+  bd:     #c6d0f5;    /* Lavender - Borda */
+}

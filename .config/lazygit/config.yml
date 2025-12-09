@@ -9,16 +9,13 @@ gui:
   theme:
     selectedLineBgColor:
       - black
-
 keybinding:
   files:
     toggleTreeView: "t"
-
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
-
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
 customCommands:
   - key: "<c-P>"
     description: "Push to a specific remote repository"
@@ -37,4 +34,3 @@ customCommands:
           - value: "push"
           - value: "push --force-with-lease"
           - value: "push --force"
-

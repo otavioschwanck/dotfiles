@@ -15,6 +15,7 @@ alias org="cd ~/org;nvim"
 alias reg="vim ~/.config/i3/config"
 alias af="ts amfi"
 alias neomood="NVIM_APPNAME=neomood nvim"
+alias fix_caps="setxkbmap -option caps:swapescape"
 
 # Personal Stuff
 alias con='python console.py'

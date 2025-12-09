@@ -124,7 +124,7 @@ set $mode_launcher Launcher
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
-    bindsym g exec google-chrome-stable; mode "default"
+    bindsym g exec flatpak run app.zen_browser.zen; mode "default"
     bindsym c exec gnome-calculator; mode "default"
     bindsym f exec nautilus; mode "default"
     bindsym d exec flatpak run com.discordapp.Discord; mode "default"
@@ -168,4 +168,4 @@ for_window [instance="crx_cinhimbnkkaeohfgghhklpknlkffjgod"] floating disable
 exec --no-startup-id sleep 4;dex ~/.local/share/applications/chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop
 exec --no-startup-id sleep 4;dex ~/.local/share/applications/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop
 exec --no-startup-id sleep 4;flatpak run com.discordapp.Discord
-exec --no-startup-id sleep 4;google-chrome-stable
+exec --no-startup-id sleep 4;flatpak run app.zen_browser.zen
