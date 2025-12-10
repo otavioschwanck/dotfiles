@@ -10,7 +10,6 @@
   ],
   "modules-center": [
     "clock",
-    "clock#brazil",
     "mpris",
     "custom/update",
     "custom/screenrecording-indicator"
@@ -20,6 +19,7 @@
     "custom/meet",
     "bluetooth",
     "network",
+    "clock#brazil",
     "pulseaudio",
     "cpu",
     "battery"
@@ -69,21 +69,25 @@
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "clock": {
-    "format": "{:L%A %H:%M}",
+    "format": "{:L%A, %d/%m %H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
   "clock#brazil": {
     "format": "🇧🇷 {:%H:%M}",
-    "format-alt": "🇧🇷 {:%d/%m %H:%M}",
+    "format-alt": "🇧🇷 {:%d/%m %H:%M ",
     "timezone": "America/Sao_Paulo",
     "tooltip": false
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} {dynamic}",
-    "dynamic-order": ["title", "artist", "album"],
+    "dynamic-order": [
+      "title",
+      "artist",
+      "album"
+    ],
     "dynamic-separator": " - ",
     "dynamic-len": 50,
     "interval": 3,
@@ -211,7 +215,8 @@
     "on-click": "~/.config/hypr/scripts/open_meet.sh",
     "on-click-right": "~/.config/hypr/scripts/list_meets.sh",
     "interval": 60,
-    "tooltip": false
+    "tooltip": false,
+    "escape": true
   },
   "tray": {
     "icon-size": 12,

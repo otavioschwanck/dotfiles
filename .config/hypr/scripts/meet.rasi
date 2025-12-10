@@ -28,7 +28,7 @@ window {
     border:							1px 1px 1px 1px;
     border-color:					@se;
     border-radius:                  0px;
-    width:							350px;
+    width:							500px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
