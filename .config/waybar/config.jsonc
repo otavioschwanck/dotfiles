@@ -213,6 +213,7 @@
     "format": "󰤙 {}  ",
     "exec": "~/.config/hypr/scripts/show_meet.sh",
     "on-click": "~/.config/hypr/scripts/open_meet.sh",
+    "on-click-middle": "xdg-open https://calendar.google.com/calendar/u/0/r?pli=1",
     "on-click-right": "~/.config/hypr/scripts/list_meets.sh",
     "interval": 60,
     "tooltip": false,
